@@ -230,14 +230,14 @@ def lora_unpacking_6ch(packet_data):
     node_addr = str(packet_data.read(13).int)
     tran_direct = packet_data.read(1).bool
     func_code = packet_data.read(3)
-    switch = packet_data.read(1).bool
+    switch = packet_data.read(2)
     battery_vol =  packet_data.read(2).uint
-    temp1 = packet_data.read(16).uint
-    temp2 = packet_data.read(16).uint
-    temp3 = packet_data.read(16).uint
-    temp4 = packet_data.read(16).uint
-    temp5 = packet_data.read(16).uint
-    temp6 = packet_data.read(16).uint
+    temp1 = packet_data.read(16).int
+    temp2 = packet_data.read(16).int
+    temp3 = packet_data.read(16).int
+    temp4 = packet_data.read(16).int
+    temp5 = packet_data.read(16).int
+    temp6 = packet_data.read(16).int
 
 
 
