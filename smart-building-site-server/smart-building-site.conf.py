@@ -41,7 +41,7 @@ killasgroup=false     ;默认为false，向进程组发送kill信号，包括子
 
 [program:smart-building-site-fab]
 
-command=/root/ENV/smart-building-site/bin/fabmanager run --port 6688; 程序启动命令
+command=/root/ENV/smart-building-site/bin/fabmanager run; 程序启动命令
 environment=PATH="/root/ENV/smart-building-site/bin"
 directory=/root/smart-building-site/smart-building-site-server
 
