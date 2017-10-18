@@ -85,14 +85,14 @@ for i in range(100):
     ct.conc_location = concreteLocations[0]
     ct.conc_gateway = concreteGateways[0]
     ct.conc_region = concreteRegions[0]
-    ct.conc_node = concreteNodes[random.randint(0, 5)]
+    ct.conc_node = concreteNodes[random.randint(0, 4)]
     ct.reserve = '00'
-    ct.temp1 = round(random.uniform(30, 80), 2)
-    ct.temp2 = round(random.uniform(30, 80), 2)
-    ct.temp3 = round(random.uniform(30, 80), 2)
-    ct.temp4 = round(random.uniform(30, 80), 2)
-    ct.temp5 = round(random.uniform(30, 80), 2)
-    ct.temp6 = round(random.uniform(30, 80), 2)
+    ct.temp1 = round(random.uniform(30, 80), 1)
+    ct.temp2 = round(random.uniform(30, 80), 1)
+    ct.temp3 = round(random.uniform(30, 80), 1)
+    ct.temp4 = round(random.uniform(30, 80), 1)
+    ct.temp5 = round(random.uniform(30, 80), 1)
+    ct.temp6 = round(random.uniform(30, 80), 1)
     ct.battery_vol = 3
     ct.datetime = datetime_now
 

@@ -1,6 +1,8 @@
 from flask import render_template
 from flask_appbuilder.models.sqla.interface import SQLAInterface
 from flask_appbuilder import ModelView
+from flask_babel import lazy_gettext as _
+
 from app import appbuilder, db
 from .models import ConcLocation, ConcGateway, ConcRegion, ConcNode, ConcTemp
 

@@ -2,7 +2,7 @@
 from flask import Flask
 from flask_restful import Api, Resource, abort, reqparse
 from app import db
-from app.models import Users, ConcGateway, ConcNode, ConcTemp
+from app.models import ConcGateway, ConcNode, ConcTemp
 from sqlalchemy import and_
 from flasgger import Swagger, swag_from
 import random
