@@ -238,7 +238,7 @@ def lora_unpacking_realtime_6ch(packet_data):
     node_addr = str(packet_data.read(13).int)
     tran_direct = packet_data.read(1).bool
     func_code = packet_data.read(3)
-    reserve = packet_data.read(2)
+    reserve = packet_data.read(2).int
     battery_vol =  packet_data.read(2).uint
     temp1 = packet_data.read(16).int
     temp2 = packet_data.read(16).int
