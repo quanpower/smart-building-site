@@ -313,7 +313,7 @@ def save_realtime_data_6ch(data):
 
 #=====================================================
 if __name__ == '__main__': 
-    mqttc = mqtt.Client("yangjian")
+    mqttc = mqtt.Client("yangjian_yixiangcheng")
     mqttc.username_pw_set("iiot", "smartlinkcloud")
     mqttc.on_message = on_message
     mqttc.on_connect = on_connect
