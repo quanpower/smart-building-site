@@ -1,4 +1,6 @@
 # -*- coding:utf-8 -*-
+
+
 import os
 import sys
 import datetime
@@ -6,9 +8,9 @@ import socket, sys
 import struct
 from bitstring import BitArray, BitStream
 import binascii
-# from app.models import GrainTemp
+from app.models import ConcTemp
 import logging
-# from app import db
+from app import db
 from utils import crc_func, sign
 
 
@@ -116,7 +118,8 @@ def on_message(mqttc, obj, msg):
             logger.info(packet_data)
             logger.info('--------packet_data.bin--------')
             logger.info(packet_data.bin)
-            realtime_data_6 = lora_unpacking_6ch(packet_data)
+            realtime_data_6 = lora_unpacking_realtime_6ch(packet_data)
+            save_realtime_data_6ch(realtime_data_6)
 
         else:
             logger.info('bytes unknown!')
@@ -137,6 +140,7 @@ def lora_unpacking(packet_data):
         packet_data.pos = 0
     else:
         pass
+
 
 def lora_unpacking_realtime_data(packet_data):
     logger.info('--------real data process beginning-----------')
@@ -196,6 +200,7 @@ def lora_unpacking_realtime_data(packet_data):
 
     return (gateway_addr, node_addr, switch, temprature1, temprature2, temprature3, battery_vol)
 
+
 def save_realtime_data(data):
     c = GrainTemp()
     c.grain_storehouse_id = 1
@@ -218,19 +223,22 @@ def save_realtime_data(data):
         db.session.rollback()
 
 
+
+
 def lora_unpacking_ack(packet_data):
     # todo
     logger.info('-------- ack data process beginning -----------')
 
-def lora_unpacking_6ch(packet_data):
+
+def lora_unpacking_realtime_6ch(packet_data):
     # todo
-    logger.info('-------- 6 channel tep data process beginning -----------')
+    logger.info('-------- 6 channel temp data process beginning -----------')
     
     gateway_addr = str(packet_data.read(3).uint)
     node_addr = str(packet_data.read(13).int)
     tran_direct = packet_data.read(1).bool
     func_code = packet_data.read(3)
-    switch = packet_data.read(2)
+    reserve = packet_data.read(2)
     battery_vol =  packet_data.read(2).uint
     temp1 = packet_data.read(16).int
     temp2 = packet_data.read(16).int
@@ -240,10 +248,12 @@ def lora_unpacking_6ch(packet_data):
     temp6 = packet_data.read(16).int
 
 
-
-    # temprature1 = (sign(temp1_sign) * temp1)/10.0
-    # temprature2 = (sign(temp2_sign) * temp2)/10.0
-    # temprature3 = (sign(temp3_sign) * temp3)/10.0
+    temprature1 = temp1/10.0
+    temprature2 = temp2/10.0
+    temprature3 = temp3/10.0
+    temprature4 = temp4/10.0
+    temprature5 = temp5/10.0
+    temprature6 = temp6/10.0
 
     logger.debug('gateway_addr: %s',gateway_addr)
     logger.info('-------------------')
@@ -256,33 +266,54 @@ def lora_unpacking_6ch(packet_data):
     logger.debug('func_code: %s',func_code)
     logger.debug('-------------------')
 
-    logger.debug('switch: %s',switch)
-    logger.debug('-------------------')
+    logger.debug('reserve: %s',reserve)
 
-    # logger.debug('temp1_sign',temp1_sign)
-    # logger.debug('-------------------')
 
-    # logger.debug('temp2_sign',temp2_sign)
-    # logger.debug('-------------------')
+    logger.info('---------temps----------')
 
-    # logger.debug('temp3_sign',temp3_sign)
-    logger.info('-------------------')
-
-    logger.info('temp1: %s',temp1)
-    logger.info('temp2: %s',temp2)
-    logger.info('temp3: %s',temp3)
-    logger.info('temp4: %s',temp4)
-    logger.info('temp5: %s',temp5)
-    logger.info('temp6: %s',temp6)
+    logger.info('temp1: %s',temprature1)
+    logger.info('temp2: %s',temprature2)
+    logger.info('temp3: %s',temprature3)
+    logger.info('temp4: %s',temprature4)
+    logger.info('temp5: %s',temprature5)
+    logger.info('temp6: %s',temprature6)
     logger.info('-------------------')
 
     logger.info('battery_vol: %s',battery_vol)
     
     # logger.info('values : %s, %s, %s, %s', temprature1, temprature2, temprature3, battery_vol)
+    return (gateway_addr, node_addr, reserve, temprature1, temprature2, temprature3, temprature4, temprature5, temprature6, battery_vol)
+
+
+
+def save_realtime_data_6ch(data):
+    c = ConcTemp()
+    c.conc_location_id = 1
+    c.conc_gateway_id = data[0]
+    c.conc_region_id = 1
+    c.conc_node_id = data[1]
+    c.reserve = data[2]
+    c.temp1 = data[3]
+    c.temp2 = data[4]
+    c.temp3 = data[5]
+    c.temp4 = data[6]
+    c.temp5 = data[7]
+    c.temp6 = data[8]
+    c.battery_vol = data[9]
+    c.datetime = datetime.datetime.now()
+
+    db.session.add(c)
+    try:
+        db.session.commit()
+        logger.debug('inserted!') 
+    except Exception, e:
+        logger.error("Inserting ConcTemp: %s", e)
+        db.session.rollback()
+
 
 #=====================================================
 if __name__ == '__main__': 
-    mqttc = mqtt.Client("002")
+    mqttc = mqtt.Client("yangjian")
     mqttc.username_pw_set("iiot", "smartlinkcloud")
     mqttc.on_message = on_message
     mqttc.on_connect = on_connect

@@ -1,0 +1,24 @@
+<<<<<<< HEAD
+dist
+node_modules
+yarn.lock
+npm-debug.log
+.idea
+||||||| merged common ancestors
+dist
+node_modules
+yarn.lock
+npm-debug.log
+=======
+dist
+node_modules
+yarn.lock
+npm-debug.log
+# ide
+.idea
+
+# Mac General
+.DS_Store
+.AppleDouble
+.LSOverride
+>>>>>>> upstream/master
