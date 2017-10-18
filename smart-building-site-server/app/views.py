@@ -3,6 +3,8 @@ from flask_appbuilder.models.sqla.interface import SQLAInterface
 from flask_appbuilder import ModelView
 from app import appbuilder, db
 from .models import ConcLocation, ConcGateway, ConcRegion, ConcNode, ConcTemp
+
+
 """
     Create your Views::
 
@@ -20,6 +22,8 @@ from .models import ConcLocation, ConcGateway, ConcRegion, ConcNode, ConcTemp
 """
     Application wide 404 error handler
 """
+
+
 @appbuilder.app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html', base_template=appbuilder.base_template, appbuilder=appbuilder), 404
@@ -43,6 +47,7 @@ class ConcLocationModelView(ModelView):
         ('Summary', {'fields': ['location_no', 'location_name']}),
     ]
 
+
 class ConcGatewayModelView(ModelView):
     datamodel = SQLAInterface(ConcGateway)
 
@@ -61,6 +66,7 @@ class ConcGatewayModelView(ModelView):
         ('Summary', {'fields': ['gateway_addr', 'conc_location']}),
     ]
 
+
 class ConcRegionModelView(ModelView):
     datamodel = SQLAInterface(ConcRegion)
 
@@ -78,6 +84,7 @@ class ConcRegionModelView(ModelView):
     edit_fieldsets = [
         ('Summary', {'fields': ['region_no', 'region_name', 'conc_location', 'conc_gateway']}),
     ]
+
 
 class ConcNodeModelView(ModelView):
     datamodel = SQLAInterface(ConcNode)

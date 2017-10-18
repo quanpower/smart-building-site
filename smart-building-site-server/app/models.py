@@ -70,7 +70,7 @@ class ConcTemp(Model):
     conc_region_id = Column(Integer, ForeignKey('conc_region.id'), nullable=False)
     conc_region = relationship("ConcRegion")
     conc_node_id = Column(Integer, ForeignKey('conc_node.id'), nullable=False)
-    conc_node = relationship("ConcNode", backref = 'conc_node')
+    conc_node = relationship("ConcNode")
     reserve = Column(String(10))
     temp1 = Column(Float)
     temp2 = Column(Float)
