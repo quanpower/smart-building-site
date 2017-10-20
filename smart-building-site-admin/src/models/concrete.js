@@ -28,7 +28,7 @@ export default modelExtend(model, {
           setInterval(() => {
             dispatch({type: 'fetchAirConDashboard'})
 
-          }, 5000)
+          }, 600000)
         } else {
           console.log('we are at:', pathname)
         }

@@ -190,7 +190,7 @@ class ConcTemps(Resource):
     '''
     def get(self, gatewayAddr, nodeAddr):
 
-        temp_records = db.session.query(ConcTemp.temp1, ConcTemp.temp2, ConcTemp.temp3, ConcTemp.datetime).filter(and_(ConcGateway.gateway_addr == gatewayAddr, ConcNode.node_addr == nodeAddr)).order_by(ConcTemp.datetime.desc()).limit(10).all()
+        temp_records = db.session.query(ConcTemp.temp1, ConcTemp.temp2, ConcTemp.temp3, ConcTemp.datetime).filter(ConcNode.node_addr == nodeAddr).order_by(ConcTemp.datetime.desc()).limit(10).all()
 
         temp_log = []
         for i in xrange(len(temp_records)):
@@ -300,6 +300,35 @@ class Menus(Resource):
             'name': '历史记录',
             'icon': 'bulb',
             'route': '/booking_admin',
+          },{
+            'id': '5',
+            'bpid': '1',
+            'name': '图表报告',
+            'icon': 'code-o',
+          },
+          {
+            'id': '51',
+            'bpid': '5',
+            'mpid': '5',
+            'name': '线状图',
+            'icon': 'line-chart',
+            'route': '/chart/lineChart',
+          },
+          {
+            'id': '52',
+            'bpid': '5',
+            'mpid': '5',
+            'name': '柱状图',
+            'icon': 'bar-chart',
+            'route': '/chart/barChart',
+          },
+          {
+            'id': '53',
+            'bpid': '5',
+            'mpid': '5',
+            'name': '面积图',
+            'icon': 'area-chart',
+            'route': '/chart/areaChart',
           },
           {
             'id': '9',
@@ -399,36 +428,7 @@ class Menus(Resource):
             'icon': 'credit-card',
             'route': '/UIElement/layer',
           },
-          {
-            'id': '5',
-            'bpid': '1',
-            'name': '图表',
-            'icon': 'code-o',
-          },
-          {
-            'id': '51',
-            'bpid': '5',
-            'mpid': '5',
-            'name': '线状图',
-            'icon': 'line-chart',
-            'route': '/chart/lineChart',
-          },
-          {
-            'id': '52',
-            'bpid': '5',
-            'mpid': '5',
-            'name': '柱状图',
-            'icon': 'bar-chart',
-            'route': '/chart/barChart',
-          },
-          {
-            'id': '53',
-            'bpid': '5',
-            'mpid': '5',
-            'name': '面积图',
-            'icon': 'area-chart',
-            'route': '/chart/areaChart',
-          },
+          
           {
             'id': '6',
             'bpid': '1',
