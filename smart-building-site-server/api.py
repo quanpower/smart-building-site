@@ -171,10 +171,10 @@ class ConcRealtimeTemp(Resource):
 
     def get(self, gatewayAddr, nodeAddr):
         # temps = db.session.query(ConcTemp.temp1, ConcTemp.temp2, ConcTemp.temp3, ConcTemp.battery_vol,ConcNode.node_addr ).filter(and_(ConcGateway.gateway_addr == gatewayAddr, ConcNode.node_addr == unicode(nodeAddr))).order_by(ConcTemp.datetime.desc()).first()
-        temps = db.session.query(ConcTemp.temp1, ConcTemp.temp2, ConcTemp.temp3, ConcTemp.battery_vol, ConcNode.node_addr).filter(ConcNode.node_addr == nodeAddr).order_by(ConcTemp.datetime.desc()).first()
+        temps = db.session.query(ConcTemp.temp1, ConcTemp.temp2, ConcTemp.temp3, ConcTemp.temp4, ConcTemp.temp5, ConcTemp.temp6, ConcTemp.battery_vol, ConcNode.node_addr).filter(ConcNode.node_addr == nodeAddr).order_by(ConcTemp.datetime.desc()).first()
 
         print("temps:", temps)
-        conc_realtime_temp_dic = {"concRealtimeTemp": [{"icon": "bulb", "color": "#64ea91", "title": "上", "number": temps[0]}, {"icon": "bulb", "color": "#8fc9fb", "title": "中", "number": temps[1]}, {"icon": "bulb", "color": "#d897eb", "title": "下", "number": temps[2]}, {"icon": "home", "color": "#f69899", "title": "电池", "number": temps[3]}]}
+        conc_realtime_temp_dic = {"concRealtimeTemp": [{"icon": "bulb", "color": "#64ea91", "title": "温度1", "number": temps[0]}, {"icon": "bulb", "color": "#8fc9fb", "title": "温度2", "number": temps[1]}, {"icon": "bulb", "color": "#d897eb", "title": "温度3", "number": temps[2]}, {"icon": "bulb", "color": "#d897eb", "title": "温度4", "number": temps[3]}, {"icon": "bulb", "color": "#d897eb", "title": "温度5", "number": temps[4]}, {"icon": "bulb", "color": "#d897eb", "title": "温度6", "number": temps[5]}, {"icon": "home", "color": "#f69899", "title": "电池", "number": temps[6]}]}
         return conc_realtime_temp_dic
 
     def delete(self, todo_id):
