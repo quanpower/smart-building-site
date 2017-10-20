@@ -15,7 +15,6 @@ api = Api(app)
 swagger = Swagger(app)
 
 
-
 app.config['SWAGGER'] = {
     'title': 'SmartLinkCloud RESTful API',
     'uiversion': 2
@@ -172,9 +171,9 @@ class ConcRealtimeTemp(Resource):
 
     def get(self, gatewayAddr, nodeAddr):
         # temps = db.session.query(ConcTemp.temp1, ConcTemp.temp2, ConcTemp.temp3, ConcTemp.battery_vol,ConcNode.node_addr ).filter(and_(ConcGateway.gateway_addr == gatewayAddr, ConcNode.node_addr == unicode(nodeAddr))).order_by(ConcTemp.datetime.desc()).first()
-        temps = db.session.query(ConcTemp.temp1, ConcTemp.temp2, ConcTemp.temp3, ConcTemp.battery_vol,ConcNode.node_addr ).filter(ConcNode.node_addr == unicode(nodeAddr)).order_by(ConcTemp.datetime.desc()).first()
+        temps = db.session.query(ConcTemp.temp1, ConcTemp.temp2, ConcTemp.temp3, ConcTemp.battery_vol, ConcNode.node_addr).filter(ConcNode.node_addr == nodeAddr).order_by(ConcTemp.datetime.desc()).first()
 
-        print("temps:",temps)
+        print("temps:", temps)
         conc_realtime_temp_dic = {"concRealtimeTemp": [{"icon": "bulb", "color": "#64ea91", "title": "上", "number": temps[0]}, {"icon": "bulb", "color": "#8fc9fb", "title": "中", "number": temps[1]}, {"icon": "bulb", "color": "#d897eb", "title": "下", "number": temps[2]}, {"icon": "home", "color": "#f69899", "title": "电池", "number": temps[3]}]}
         return conc_realtime_temp_dic
 
