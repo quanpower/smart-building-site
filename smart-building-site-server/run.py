@@ -27,7 +27,7 @@ for i in range(len(nodeAddrs)):
 
     with open('1.csv', 'wb') as csvfile:
         spamwriter = csv.writer(csvfile, dialect='excel')
-        for k in len(temps):
+        for k in range(len(temps)):
             temp = temps[k]
             spamwriter.writerow([temp[14], temp[7], temp[8], temp[9], temp[10], temp[11], temp[12], temp[13]])
 
