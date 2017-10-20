@@ -503,9 +503,9 @@ api.add_resource(TodoList, '/todos')
 api.add_resource(Todo, '/todos/<todo_id>')
 api.add_resource(Username, '/username/<username>')
 api.add_resource(Menus, '/api/v1/menus')
-api.add_resource(ConcRealtimeTemp, '/api/v1/concrete_realtime_temperature')
-api.add_resource(ConcTemps, '/api/v1/concrete_temperatures')
-api.add_resource(ConcTempRecord, '/api/v1/concrete_temperature_record')
+api.add_resource(ConcRealtimeTemp, '/api/v1/concrete_realtime_temperature/<gatewayAddr>/<node_addr>')
+api.add_resource(ConcTemps, '/api/v1/concrete_temperatures/<gatewayAddr>/<node_addr>')
+api.add_resource(ConcTempRecord, '/api/v1/concrete_temperature_record/<gatewayAddr>/<node_addr>/<startTime>/<endTime>')
 api.add_resource(ConcDashboard, '/api/v1/concrete_dashboard')
 
 
