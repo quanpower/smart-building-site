@@ -22,7 +22,7 @@ for i in range(len(nodeAddrs)):
     print('--------nodeAddr-----------')
     print(nodeAddr)
     # temps = db.session.query(ConcTemp.temp1, ConcTemp.temp2, ConcTemp.temp3, ConcTemp.temp4, ConcTemp.temp5, ConcTemp.temp6, ConcTemp.datetime).join(ConcNode, ConcNode.id == ConcTemp.conc_node_id).filter(and_(ConcNode.node_addr == nodeAddr, ConcTemp.datetime.between(startTime, endTime))).order_by(ConcTemp.datetime.desc()).all()
-    temps = db.session.query(ConcTemp.temp1, ConcTemp.temp2, ConcTemp.temp3, ConcTemp.temp4, ConcTemp.temp5, ConcTemp.temp6, ConcTemp.datetime).join(ConcNode, ConcNode.id == ConcTemp.conc_node_id).filter(ConcTemp.datetime.between(startTime, endTime)).order_by(ConcTemp.datetime.desc()).all()
+    temps = db.session.query(ConcTemp.temp1, ConcTemp.temp2, ConcTemp.temp3, ConcTemp.temp4, ConcTemp.temp5, ConcTemp.temp6, ConcTemp.datetime).filter(ConcTemp.datetime.between(startTime, endTime)).order_by(ConcTemp.datetime.desc()).all()
 
 
     # temps = db.session.query(ConcTemp.temp1, ConcTemp.temp2, ConcTemp.temp3, ConcTemp.temp4, ConcTemp.temp5,
