@@ -21,7 +21,7 @@ export async function getConcTemps (params) {
 
 export async function getConcTempRecord (params) {
   return request({
-    url: concTempRecord.concat('/1/112/2017-10-20 00:00:00/2017-10-20 24:00:00'),
+    url: concTempRecord.concat('/1/112/2017-10-20 00:00:00/2017-10-30 23:00:00'),
     method: 'get',
     data: params,
   })
