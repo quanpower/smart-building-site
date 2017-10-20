@@ -22,7 +22,7 @@ for i in range(len(nodeAddrs)):
     print('--------nodeAddr-----------')
     print(nodeAddr)
     # temps = db.session.query(ConcTemp.temp1, ConcTemp.temp2, ConcTemp.temp3, ConcTemp.temp4, ConcTemp.temp5, ConcTemp.temp6, ConcTemp.datetime).join(ConcNode, ConcNode.id == ConcTemp.conc_node_id).filter(and_(ConcNode.node_addr == nodeAddr, ConcTemp.datetime.between(startTime, endTime))).order_by(ConcTemp.datetime.desc()).all()
-    temps = db.session.query(ConcTemp.temp1, ConcTemp.temp2, ConcTemp.temp3, ConcTemp.temp4, ConcTemp.temp5, ConcTemp.temp6, ConcTemp.datetime).filter(ConcTemp.datetime.between(startTime, endTime)).order_by(ConcTemp.datetime.desc()).all()
+    temps = db.session.query(ConcTemp.temp1, ConcTemp.temp2, ConcTemp.temp3, ConcTemp.temp4, ConcTemp.temp5, ConcTemp.temp6, ConcTemp.datetime, ConcTemp.conc_node_id).filter(ConcTemp.datetime.between(startTime, endTime)).order_by(ConcTemp.datetime.desc()).all()
 
 
     # temps = db.session.query(ConcTemp.temp1, ConcTemp.temp2, ConcTemp.temp3, ConcTemp.temp4, ConcTemp.temp5,
@@ -36,11 +36,17 @@ for i in range(len(nodeAddrs)):
     print('-----temps are:-----')
     print(temps)
 
-    with open('1.csv', 'wb') as csvfile:
+    with open('{}.csv'.format(nodeAddr), 'wb') as csvfile:
         spamwriter = csv.writer(csvfile, dialect='excel')
         for k in range(len(temps)):
             temp = temps[k]
-            spamwriter.writerow([temp[6], temp[0], temp[1], temp[2], temp[3], temp[4], temp[5], temp[6]])
+            print('---nodeAddr---', nodeAddr)
+            print('---temp---', temp)
+
+
+            if temp[7] == int(nodeAddr):
+                print('---nodeAddr---', nodeAddr)
+                spamwriter.writerow([temp[6], temp[0], temp[1], temp[2], temp[3], temp[4], temp[5], temp[7]])
 
     temp_records = db.session.query(ConcTemp.temp1, ConcTemp.temp2, ConcTemp.temp3, ConcTemp.temp4, ConcTemp.temp5, ConcTemp.temp6, ConcTemp.datetime).filter(and_(ConcGateway.gateway_addr == gatewayAddr, ConcNode.node_addr == nodeAddr, ConcTemp.datetime.between(startTime, endTime))).order_by(ConcTemp.datetime.desc()).all()
 

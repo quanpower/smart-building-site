@@ -286,14 +286,14 @@ class Menus(Resource):
             'id': '1',
             'icon': 'laptop',
             'name': '主界面',
-            'route': '/dashboard',
+            'route': '/concrete',
           },
           {
             'id': '12',
             'bpid': '1',
             'name': '场馆管理',
             'icon': 'bulb',
-            'route': '/venue_admin',
+            'route': '/concdetail',
           },
           {
             'id': '2',
@@ -301,13 +301,6 @@ class Menus(Resource):
             'name': '订场管理',
             'icon': 'bulb',
             'route': '/booking_admin',
-          },
-          {
-            'id': '8',
-            'bpid': '1',
-            'name': '活动管理',
-            'icon': 'bulb',
-            'route': '/event_admin',
           },
           {
             'id': '9',
@@ -331,21 +324,6 @@ class Menus(Resource):
             'icon': 'team',
             'route': '/user_center',
           },
-          {
-            'id': '10',
-            'bpid': '1',
-            'name': '资讯管理',
-            'icon': 'bulb',
-            'route': '/info_admin',
-          },
-          {
-            'id': '11',
-            'bpid': '1',
-            'name': '财务中心',
-            'icon': 'shopping-cart',
-            'route': '/finance_center',
-          },
-          
           {
             'id': '7',
             'bpid': '1',
@@ -529,7 +507,6 @@ api.add_resource(Menus, '/api/v1/menus')
 api.add_resource(ConcRealtimeTemp, '/api/v1/concrete_realtime_temperature')
 api.add_resource(ConcTemps, '/api/v1/concrete_temperatures')
 api.add_resource(ConcTempRecord, '/api/v1/concrete_temperature_record')
-api.add_resource(ConcDashboard, '/api/v1/concrete_dashboard')
 api.add_resource(ConcDashboard, '/api/v1/concrete_dashboard')
 
 

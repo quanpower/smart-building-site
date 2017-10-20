@@ -13,9 +13,9 @@ const Routers = function ({ history, app }) {
   })
   const routes = [
     {
-      path: '/dashboard',
-      models: () => [import('./models/dashboard')],
-      component: () => import('./routes/dashboard/'),
+      path: '/concrete',
+      models: () => [import('./models/concrete')],
+    component: () => import('./routes/concrete/'),
     }, {
       path: '/user',
       models: () => [import('./models/user')],
@@ -59,30 +59,6 @@ const Routers = function ({ history, app }) {
       path: '/chart/areaChart',
       component: () => import('./routes/chart/areaChart/'),
     }, {
-      path: '/grain',
-      models: () => [import('./models/grain')],
-      component: () => import('./routes/grain/'),
-    }, {
-      path: '/graindashboard',
-      models: () => [import('./models/graindash')],
-      component: () => import('./routes/graindash/'),
-    }, {
-      path: '/grain_history',
-      models: () => [import('./models/grainhistory')],
-      component: () => import('./routes/grainhistory/'),
-    },  {
-      path: '/aircondetail/:node_No',
-      models: () => [import('./models/aircondetail')],
-      component: () => import('./routes/aircondetail/'),
-    }, {
-      path: '/aircon_control',
-      models: () => [import('./models/airconcontrol')],
-      component: () => import('./routes/airconcontrol/'),
-    }, {
-      path: '/concrete',
-      models: () => [import('./models/concrete')],
-      component: () => import('./routes/concrete/'),
-    }, {
       path: '/concdetail',
       models: () => [import('./models/concdetail')],
       component: () => import('./routes/concdetail/'),
@@ -94,7 +70,7 @@ const Routers = function ({ history, app }) {
     <ConnectedRouter history={history}>
       <App>
         <Switch>
-          <Route exact path="/" render={() => (<Redirect to="/dashboard" />)} />
+          <Route exact path="/" render={() => (<Redirect to="/concrete" />)} />
           {
             routes.map(({ path, ...dynamics }, key) => (
               <Route key={key}

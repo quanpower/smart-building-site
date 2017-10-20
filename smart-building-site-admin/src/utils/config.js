@@ -41,17 +41,10 @@ module.exports = {
     grainSecurity: `${APIV2}/grain_security`,
     grainHistory: `${APIV2}/grain_history`,
 
-    concTemp: `${APIV2}/concrete_temperature`,
+    concTemp: `${APIV2}/concrete_realtime_temperature`,
     concTemps: `${APIV2}/concrete_temperatures`,
     concTempRecord: `${APIV2}/concrete_temperature_record`,
     concDashboard: `${APIV2}/concrete_dashboard`,
-
-    airConTemp: `${APIV2}/air-conditioner_temperature`,
-    airConTemps: `${APIV2}/air-conditioner_temperatures`,
-    airConTempRecord: `${APIV2}/air-conditioner_temperature_record`,
-    airConDashboard: `${APIV2}/air-conditioner_dashboard`,
-    airConControls: `${APIV2}/air-conditioner_controls`,
-    airConControl: `${APIV2}/air-conditioner_control`,
 
   },
 }
