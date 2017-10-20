@@ -24,7 +24,7 @@ export default modelExtend(model, {
       history.listen(({pathname}) => {
         if (pathname === '/concrete') {
           dispatch({ type: 'query' })
-          console.log('update ConcTemps begin---')
+          console.log('----update ConcTemps begin---')
           setInterval(() => {
             dispatch({type: 'fetchAirConDashboard'})
 

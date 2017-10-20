@@ -17,11 +17,11 @@ const bodyStyle = {
 
 function ConcDetail ({ concdetail }) {
   const { concRealtimeTemp, concTemps, concTempRecord } = concdetail
-  console.log('concRealtimeTemp', concRealtimeTemp)
-  console.log('concTemps', concTemps)
-  console.log('concTempRecord', concTempRecord)
+  console.log('concRealtimeTemp:', concRealtimeTemp)
+  console.log('concTemps:', concTemps)
+  console.log('concTempRecord:', concTempRecord)
 
-  const concCards = concRealtimeTemp.map((item, key) => (<Col key={key} lg={6} md={12}>
+  const concCards = concRealtimeTemp.map((item, key) => (<Col key={key} lg={6} md={6}>
     <ConcRealtimeTemp {...item} />
   </Col>))
 

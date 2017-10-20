@@ -6,7 +6,6 @@ import { color } from 'utils'
 import { Loader } from 'components'
 import { ConcDashboard, Weather, Quote } from './components'
 import styles from './index.less'
-import dashboard from "../../models/dashboard";
 
 const bodyStyle = {
   bodyStyle: {
@@ -17,9 +16,7 @@ const bodyStyle = {
 
 function ConcDash ({ concrete }) {
   const { concDash, weather, quote } = concrete
-  console.log('concDash is: ', concDash)
-  console.log('weather is: ', weather)
-  console.log('quote is: ', weather)
+
 
   return (
     <div>

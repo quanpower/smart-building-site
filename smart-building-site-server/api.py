@@ -190,11 +190,11 @@ class ConcTemps(Resource):
     '''
     def get(self, gatewayAddr, nodeAddr):
 
-        temp_records = db.session.query(ConcTemp.temp1, ConcTemp.temp2, ConcTemp.temp3, ConcTemp.datetime).filter(ConcNode.node_addr == nodeAddr).order_by(ConcTemp.datetime.desc()).limit(10).all()
+        temp_records = db.session.query(ConcTemp.temp1, ConcTemp.temp2, ConcTemp.temp3, ConcTemp.temp4, ConcTemp.temp5, ConcTemp.temp6, ConcTemp.datetime).filter(ConcNode.node_addr == nodeAddr).order_by(ConcTemp.datetime.desc()).limit(10).all()
 
         temp_log = []
         for i in xrange(len(temp_records)):
-            temp_log.append({"时间": temp_records[i][3].strftime("%Y-%m-%d %H:%M:%S"), "温度1": temp_records[i][0], "温度2": temp_records[i][1], "温度3": temp_records[i][2]})
+            temp_log.append({"时间": temp_records[i][3].strftime("%Y-%m-%d %H:%M:%S"), "温度1": temp_records[i][0], "温度2": temp_records[i][1], "温度3": temp_records[i][2],"温度4": temp_records[i][3], "温度5": temp_records[i][4], "温度6": temp_records[i][5]})
 
         temps_reverse = temp_log[::-1]
         print('------------temps_reverse--------------')
@@ -221,7 +221,7 @@ class ConcTempRecord(Resource):
         print(startTime)
         print(endTime)
         temp_records = db.session.query(ConcTemp.temp1, ConcTemp.temp2, ConcTemp.temp3, ConcTemp.temp4, ConcTemp.temp5,
-            ConcTemp.temp6, ConcTemp.datetime).filter(ConcTemp.datetime.between(startTime, endTime)).order_by(ConcTemp.datetime.desc()).all()
+            ConcTemp.temp6, ConcTemp.datetime,ConcTemp.conc_node_id).filter(ConcTemp.datetime.between(startTime, endTime)).order_by(ConcTemp.datetime.desc()).all()
         # temp_records = db.session.query(ConcTemp.temp1, ConcTemp.temp2, ConcTemp.temp3, ConcTemp.temp4, ConcTemp.temp5,
         #     ConcTemp.temp6, ConcTemp.datetime).join(ConcNode, ConcNode.id == ConcTemp.conc_node_id).join(
         #     ConcGateway, ConcGateway.id == ConcTemp.conc_gateway_id).filter(and_(ConcGateway.gateway_addr == gatewayAddr,
@@ -229,13 +229,14 @@ class ConcTempRecord(Resource):
 
         temp_log = []
         for i in xrange(len(temp_records)):
-            temp_log.append({"key": i, "time": temp_records[i][6].strftime("%Y-%m-%d %H:%M:%S"), "Temp1": temp_records[i][0], "Temp2": temp_records[i][1], "Temp3": temp_records[i][2], "Temp4": temp_records[i][3], "Temp5": temp_records[i][4], "Temp6": temp_records[i][5]})
+            temp_log.append({"key": i,"node": temp_records[i][7], "time": temp_records[i][6].strftime("%Y-%m-%d %H:%M:%S"), "Temp1": temp_records[i][0], "Temp2": temp_records[i][1], "Temp3": temp_records[i][2], "Temp4": temp_records[i][3], "Temp5": temp_records[i][4], "Temp6": temp_records[i][5]})
 
         temps_reverse = temp_log[::-1]
+
         print('------------temps_records--------------')
         print(temps_reverse)
 
-        temps_record_dict = {"concTempRecord": temps_reverse}
+        temps_record_dict = {"concTempRecord": temp_log}
         return temps_record_dict
 
     def delete(self, todo_id):

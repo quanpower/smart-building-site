@@ -4,6 +4,10 @@ import { Table, Popconfirm, Button ,DatePicker, message} from 'antd';
 
 const ConcTempRecord = ({ concTempRecord }) => {
   const columns = [{
+    title: '节点',
+    dataIndex: 'node',
+    key: 'node',
+  }, {
     title: '时间',
     dataIndex: 'time',
     key: 'time',
