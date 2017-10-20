@@ -15,7 +15,7 @@ gatewayAddr='1'
 nodeAddrs = ['110', '112', '114']
 
 startTime = datetime.datetime.strptime('2017-10-20 00:00:00', "%Y-%m-%d %H:%M:%S")
-endTime = datetime.datetime.strptime('2017-10-20 12:00:00', "%Y-%m-%d %H:%M:%S")
+endTime = datetime.datetime.strptime('2017-10-20 13:00:00', "%Y-%m-%d %H:%M:%S")
 
 for i in range(len(nodeAddrs)):
     nodeAddr = nodeAddrs[i]
