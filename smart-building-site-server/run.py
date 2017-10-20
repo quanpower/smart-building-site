@@ -17,14 +17,14 @@ for i in range(len(nodeAddrs)):
     nodeAddr = nodeAddrs[i]
     print('--------nodeAddr-----------')
     print(nodeAddr)
-    temps = db.session.query(ConcTemp).all()
+    temps = db.session.query(ConcTemp).filter(ConcTemp.datetime.between(startTime, endTime)).all()
     print('-----temps:-----')
     print(temps)
 
     temp_records = db.session.query(ConcTemp.temp1, ConcTemp.temp2, ConcTemp.temp3, ConcTemp.temp4, ConcTemp.temp5, ConcTemp.temp6, ConcTemp.datetime).filter(and_(ConcGateway.gateway_addr == gatewayAddr, ConcNode.node_addr == nodeAddr, ConcTemp.datetime.between(startTime, endTime))).order_by(ConcTemp.datetime.desc()).all()
 
     temp_log = []
-    for i in xrange(len(temp_records)):
+    for j in xrange(len(temp_records)):
         temp_log.append({"key": i, "time": temp_records[i][6].strftime("%Y-%m-%d %H:%M:%S"), "Temp1": temp_records[i][0], "Temp2": temp_records[i][1], "Temp3": temp_records[i][2], "Temp4": temp_records[i][3], "Temp5": temp_records[i][4], "Temp6": temp_records[i][5]})
 
     temps_reverse = temp_log[::-1]
