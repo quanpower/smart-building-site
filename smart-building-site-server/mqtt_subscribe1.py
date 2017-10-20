@@ -12,7 +12,7 @@ from app.models import ConcTemp
 import logging
 from app import db
 from utils import crc_func, sign
-
+import random
 
 # 第一步，创建一个logger  
 logger = logging.getLogger()  
