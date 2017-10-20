@@ -32,6 +32,9 @@ function Temps ({ data }) {
           <Line type="monotone" dataKey="温度1" stroke={color.purple} strokeWidth={3} dot={{ fill: color.purple }} activeDot={{ r: 5, strokeWidth: 0 }} />
           <Line type="monotone" dataKey="温度2" stroke={color.red} strokeWidth={3} dot={{ fill: color.red }} activeDot={{ r: 5, strokeWidth: 0 }} />
           <Line type="monotone" dataKey="温度3" stroke={color.green} strokeWidth={3} dot={{ fill: color.green }} activeDot={{ r: 5, strokeWidth: 0 }} />
+          <Line type="monotone" dataKey="温度4" stroke={color.blue} strokeWidth={3} dot={{ fill: color.blue }} activeDot={{ r: 5, strokeWidth: 0 }} />
+          <Line type="monotone" dataKey="温度5" stroke={color.yellow} strokeWidth={3} dot={{ fill: color.yellow }} activeDot={{ r: 5, strokeWidth: 0 }} />
+          <Line type="monotone" dataKey="温度6" stroke={color.peach} strokeWidth={3} dot={{ fill: color.peach }} activeDot={{ r: 5, strokeWidth: 0 }} />
         </LineChart>
       </ResponsiveContainer>
     </div>
