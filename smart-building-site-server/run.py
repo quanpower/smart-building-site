@@ -1,9 +1,13 @@
+# -*- coding:utf-8 -*-
+
+
 from app import app
 from app import db
 
 from app.models import ConcGateway, ConcNode, ConcTemp
 from sqlalchemy import and_
 import datetime
+import csv
 
 
 gatewayAddr='1'
@@ -11,7 +15,7 @@ gatewayAddr='1'
 nodeAddrs = ['110', '112', '114']
 
 startTime = datetime.datetime.strptime('2017-10-20 00:00:00', "%Y-%m-%d %H:%M:%S")
-endTime = datetime.datetime.strptime('2017-10-20 11:00:00', "%Y-%m-%d %H:%M:%S")
+endTime = datetime.datetime.strptime('2017-10-20 12:00:00', "%Y-%m-%d %H:%M:%S")
 
 for i in range(len(nodeAddrs)):
     nodeAddr = nodeAddrs[i]
@@ -20,6 +24,12 @@ for i in range(len(nodeAddrs)):
     temps = db.session.query(ConcTemp).filter(ConcTemp.datetime.between(startTime, endTime)).all()
     print('-----temps are:-----')
     print(temps)
+
+    with open('1.csv', 'wb') as csvfile:
+        spamwriter = csv.writer(csvfile, dialect='excel')
+        for k in len(temps):
+            temp = temps[k]
+            spamwriter.writerow([temp[14], temp[7], temp[8], temp[9], temp[10], temp[11], temp[12], temp[13]])
 
     temp_records = db.session.query(ConcTemp.temp1, ConcTemp.temp2, ConcTemp.temp3, ConcTemp.temp4, ConcTemp.temp5, ConcTemp.temp6, ConcTemp.datetime).filter(and_(ConcGateway.gateway_addr == gatewayAddr, ConcNode.node_addr == nodeAddr, ConcTemp.datetime.between(startTime, endTime))).order_by(ConcTemp.datetime.desc()).all()
 
@@ -35,7 +45,15 @@ for i in range(len(nodeAddrs)):
     print('---------temps_reverse-----------')
     print(temps_reverse)
 
-
+# def csv_writer(nodeAddr):
+#     with open('{0}.csv'.format(nodeAddr), 'wb') as csvfile:
+#     spamwriter = csv.writer(csvfile,dialect='excel')
+#     spamwriter.writerow(['a', '1', '1', '2', '2'])
+#     spamwriter.writerow(['b', '3', '3', '6', '4'])
+#     spamwriter.writerow(['c', '7', '7', '10', '4'])
+#     spamwriter.writerow(['d', '11','11','11', '1'])
+#     spamwriter.writerow(['e', '12','12','14', '3'])
+#
 
 app.run(host='0.0.0.0', port=9999, debug=True)
 
