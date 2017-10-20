@@ -171,7 +171,9 @@ class ConcRealtimeTemp(Resource):
 
     def get(self, gatewayAddr, nodeAddr):
         temps = db.session.query(ConcTemp.temp1, ConcTemp.temp2, ConcTemp.temp3, ConcTemp.temp4, ConcTemp.temp5, ConcTemp.temp6, ConcTemp.battery_vol, 
-            ConcNode.node_addr).join(ConcNode, ConcNode.id == ConcTemp.conc_node_id).filter(ConcNode.node_addr == nodeAddr).order_by(ConcTemp.datetime.desc()).first()
+            ConcTemp.conc_node_id).filter(ConcTemp.conc_node_id == nodeAddr).order_by(ConcTemp.datetime.desc()).first()
+        # temps = db.session.query(ConcTemp.temp1, ConcTemp.temp2, ConcTemp.temp3, ConcTemp.temp4, ConcTemp.temp5, ConcTemp.temp6, ConcTemp.battery_vol, 
+        #     ConcNode.node_addr).join(ConcNode, ConcNode.id == ConcTemp.conc_node_id).filter(ConcNode.node_addr == nodeAddr).order_by(ConcTemp.datetime.desc()).first()
 
         print("temps:", temps)
         conc_realtime_temp_dic = {"concRealtimeTemp": [{"icon": "bulb", "color": "#64ea91", "title": "温度1", "number": temps[0]}, 
@@ -194,7 +196,9 @@ class ConcTemps(Resource):
     def get(self, gatewayAddr, nodeAddr):
 
         temp_records = db.session.query(ConcTemp.temp1, ConcTemp.temp2, ConcTemp.temp3, ConcTemp.temp4, ConcTemp.temp5, ConcTemp.temp6, ConcTemp.datetime
-            ).join(ConcNode, ConcNode.id == ConcTemp.conc_node_id).filter(ConcNode.node_addr == nodeAddr).order_by(ConcTemp.datetime.desc()).limit(10).all()
+            ).filter(ConcTemp.conc_node_id == nodeAddr).order_by(ConcTemp.datetime.desc()).limit(10).all()
+        # temp_records = db.session.query(ConcTemp.temp1, ConcTemp.temp2, ConcTemp.temp3, ConcTemp.temp4, ConcTemp.temp5, ConcTemp.temp6, ConcTemp.datetime
+        #     ).join(ConcNode, ConcNode.id == ConcTemp.conc_node_id).filter(ConcNode.node_addr == nodeAddr).order_by(ConcTemp.datetime.desc()).limit(10).all()
 
         temp_log = []
         for i in xrange(len(temp_records)):
@@ -267,11 +271,9 @@ class ConcDashboard(Resource):
         print("nodes are:", nodes)
         statuses = []
         for node in nodes:
-            print(type(node))
-
             # todo: repalce geteway_addr
             temps = db.session.query(ConcTemp.temp1, ConcTemp.temp2, ConcTemp.temp3, ConcTemp.datetime).filter(
-                and_(ConcGateway.gateway_addr == '1', ConcNode.node_addr == node[0])).order_by(
+                ConcNode.node_addr == node[0]).order_by(
                 ConcTemp.datetime.desc()).first()
             if temps:
                 status = {"name":node[0]+u"号测温点","status":self.return_status(temps[0], temps[1], temps[2]),"content":"上：{0}℃, 中：{1}℃, 下：{2}℃".format(str(temps[0]),str(temps[1]),str(temps[2])),"avatar":"http://dummyimage.com/48x48/f279aa/757575.png&text={0}".format(node[0]),"date":datetime.datetime.strftime(temps[3], "%Y-%m-%d %H:%M:%S")}
@@ -281,8 +283,6 @@ class ConcDashboard(Resource):
         # conc_dash_dic = {"concDash":[{"name":"1","status":1,"content":"上：25.7℃, 中：26.5℃, 下： 31℃","avatar":"http://dummyimage.com/48x48/f279aa/757575.png&text=1","date":"2017-08-19 23:38:45"},{"name":"White","status":2,"content":"上：25.7℃, 中：26.5℃, 下： 31℃","avatar":"http://dummyimage.com/48x48/79cdf2/757575.png&text=W","date":"2017-04-22 14:17:06"},{"name":"Martin","status":3,"content":"上：25.7℃, 中：26.5℃, 下： 31℃","avatar":"http://dummyimage.com/48x48/f1f279/757575.png&text=M","date":"2017-05-07 04:29:13"},{"name":"Johnson","status":1,"content":"上：25.7℃, 中：26.5℃, 下： 31℃","avatar":"http://dummyimage.com/48x48/d079f2/757575.png&text=J","date":"2017-01-14 02:38:37"},{"name":"Jones","status":2,"content":"上：25.7℃, 中：26.5℃, 下： 31℃","avatar":"http://dummyimage.com/48x48/79f2ac/757575.png&text=J","date":"2017-07-08 20:05:50"}]}
         conc_dash_dic = {"concDash":statuses}
         print("conc_dash_dic", conc_dash_dic)
-
-
 
 
 class Menus(Resource):
@@ -515,8 +515,6 @@ api.add_resource(ConcRealtimeTemp, '/api/v1/concrete_realtime_temperature/<gatew
 api.add_resource(ConcTemps, '/api/v1/concrete_temperatures/<gatewayAddr>/<nodeAddr>')
 api.add_resource(ConcTempRecord, '/api/v1/concrete_temperature_record/<gatewayAddr>/<nodeAddr>/<startTime>/<endTime>')
 api.add_resource(ConcDashboard, '/api/v1/concrete_dashboard')
-
-
 
 
 if __name__ == '__main__':

@@ -289,6 +289,7 @@ def lora_unpacking_realtime_6ch(packet_data):
 def save_realtime_data_6ch(data):
     c = ConcTemp()
     c.conc_location_id = 1
+    # todo: use gateway_id,node_id to replace it
     c.conc_gateway_id = data[0]
     c.conc_region_id = 1
     c.conc_node_id = data[1]
