@@ -22,8 +22,12 @@ for i in range(len(nodeAddrs)):
     print('--------nodeAddr-----------')
     print(nodeAddr)
     temps = db.session.query(ConcTemp.temp1, ConcTemp.temp2, ConcTemp.temp3, ConcTemp.temp4, ConcTemp.temp5, ConcTemp.temp6, ConcTemp.datetime).join(ConcNode, ConcNode.id == ConcTemp.conc_node_id).join(
-            ConcGateway, ConcGateway.id == ConcTemp.conc_gateway_id).filter(and_(ConcGateway.gateway_addr == gatewayAddr,
-            ConcNode.node_addr == nodeAddr, ConcTemp.datetime.between(startTime, endTime))).all()
+            ConcGateway, ConcGateway.id == ConcTemp.conc_gateway_id).filter(ConcTemp.datetime.between(startTime, endTime)).all()
+
+    # temps = db.session.query(ConcTemp.temp1, ConcTemp.temp2, ConcTemp.temp3, ConcTemp.temp4, ConcTemp.temp5, ConcTemp.temp6, ConcTemp.datetime).join(ConcNode, ConcNode.id == ConcTemp.conc_node_id).join(
+    #         ConcGateway, ConcGateway.id == ConcTemp.conc_gateway_id).filter(and_(ConcGateway.gateway_addr == gatewayAddr,
+    #         ConcNode.node_addr == nodeAddr, ConcTemp.datetime.between(startTime, endTime))).all()
+
     print('-----temps are:-----')
     print(temps)
 
