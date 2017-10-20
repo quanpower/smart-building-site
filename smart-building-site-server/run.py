@@ -10,13 +10,17 @@ gatewayAddr='1'
 
 nodeAddrs = ['110', '112', '114']
 
-startTime = datetime.datetime.strptime('2017-10-20 00:00:00', "%Y-%m-%d %H:%M:%S")
+startTime = datetime.datetime.strptime('2017-10-19 00:00:00', "%Y-%m-%d %H:%M:%S")
 endTime = datetime.datetime.strptime('2017-10-20 11:00:00', "%Y-%m-%d %H:%M:%S")
 
 for i in range(len(nodeAddrs)):
     nodeAddr = nodeAddrs[i]
     print('--------nodeAddr-----------')
     print(nodeAddr)
+    temps = db.session.query(ConcTemp).all()
+    print('-----temps:-----')
+    print(temps)
+
     temp_records = db.session.query(ConcTemp.temp1, ConcTemp.temp2, ConcTemp.temp3, ConcTemp.temp4, ConcTemp.temp5, ConcTemp.temp6, ConcTemp.datetime).filter(and_(ConcGateway.gateway_addr == gatewayAddr, ConcNode.node_addr == nodeAddr, ConcTemp.datetime.between(startTime, endTime))).order_by(ConcTemp.datetime.desc()).all()
 
     temp_log = []
