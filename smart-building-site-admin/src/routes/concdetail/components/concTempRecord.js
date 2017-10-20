@@ -8,17 +8,29 @@ const ConcTempRecord = ({ concTempRecord }) => {
     dataIndex: 'time',
     key: 'time',
   }, {
-    title: '上',
+    title: '温度1',
     dataIndex: 'Temp1',
     key: 'Temp1',
   }, {
-    title: '中',
+    title: '温度2',
     dataIndex: 'Temp2',
     key: 'Temp2',
   },{
-    title: '下',
+    title: '温度3',
     dataIndex: 'Temp3',
     key: 'Temp3',
+  }, {
+    title: '温度4',
+    dataIndex: 'Temp4',
+    key: 'Temp4',
+  }, {
+    title: '温度5',
+    dataIndex: 'Temp5',
+    key: 'Temp5',
+  },{
+    title: '温度6',
+    dataIndex: 'Temp6',
+    key: 'Temp6',
   },
   ];
   console.log('concTempRecord', concTempRecord)
