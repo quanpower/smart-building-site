@@ -194,7 +194,7 @@ class ConcTemps(Resource):
 
         temp_log = []
         for i in xrange(len(temp_records)):
-            temp_log.append({"时间": temp_records[i][3].strftime("%Y-%m-%d %H:%M:%S"), "温度1": temp_records[i][0], "温度2": temp_records[i][1], "温度3": temp_records[i][2],"温度4": temp_records[i][3], "温度5": temp_records[i][4], "温度6": temp_records[i][5]})
+            temp_log.append({"时间": temp_records[i][6].strftime("%Y-%m-%d %H:%M:%S"), "温度1": temp_records[i][0], "温度2": temp_records[i][1], "温度3": temp_records[i][2],"温度4": temp_records[i][3], "温度5": temp_records[i][4], "温度6": temp_records[i][5]})
 
         temps_reverse = temp_log[::-1]
         print('------------temps_reverse--------------')
