@@ -15,7 +15,7 @@ const Routers = function ({ history, app }) {
     {
       path: '/concrete',
       models: () => [import('./models/concrete')],
-    component: () => import('./routes/concrete/'),
+      component: () => import('./routes/concrete/'),
     }, {
       path: '/user',
       models: () => [import('./models/user')],
@@ -96,3 +96,5 @@ Routers.propTypes = {
 }
 
 export default Routers
+
+

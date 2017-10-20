@@ -291,21 +291,21 @@ class Menus(Resource):
           {
             'id': '12',
             'bpid': '1',
-            'name': '场馆管理',
+            'name': '温度详情',
             'icon': 'bulb',
             'route': '/concdetail',
           },
           {
             'id': '2',
             'bpid': '1',
-            'name': '订场管理',
+            'name': '历史记录',
             'icon': 'bulb',
             'route': '/booking_admin',
           },
           {
             'id': '9',
             'bpid': '1',
-            'name': '会员中心',
+            'name': '用户中心',
             'icon': 'team',
           },
           {

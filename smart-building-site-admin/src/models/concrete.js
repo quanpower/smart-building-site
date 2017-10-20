@@ -50,7 +50,7 @@ export default modelExtend(model, {
       const concDash = yield call(getConcDashboard)
       console.log('concDash are :', concDash)
       yield put({
-        type: 'updateAirConDashboard',
+        type: 'updateConcDashboard',
         payload: {
           concDash: concDash.concDash,
         }
