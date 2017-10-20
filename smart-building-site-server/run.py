@@ -21,7 +21,9 @@ for i in range(len(nodeAddrs)):
     nodeAddr = nodeAddrs[i]
     print('--------nodeAddr-----------')
     print(nodeAddr)
-    temps = db.session.query(ConcTemp).filter(ConcTemp.datetime.between(startTime, endTime)).all()
+    temps = db.session.query(ConcTemp.temp1, ConcTemp.temp2, ConcTemp.temp3, ConcTemp.temp4, ConcTemp.temp5, ConcTemp.temp6, ConcTemp.datetime)join(ConcNode, ConcNode.id == ConcTemp.conc_node_id).join(
+            ConcGateway, ConcGateway.id == ConcTemp.conc_gateway_id).filter(and_(ConcGateway.gateway_addr == gatewayAddr,
+            ConcNode.node_addr == nodeAddr, ConcTemp.datetime.between(startTime, endTime))).all()
     print('-----temps are:-----')
     print(temps)
 
@@ -29,7 +31,7 @@ for i in range(len(nodeAddrs)):
         spamwriter = csv.writer(csvfile, dialect='excel')
         for k in range(len(temps)):
             temp = temps[k]
-            spamwriter.writerow([temp[14], temp[7], temp[8], temp[9], temp[10], temp[11], temp[12], temp[13]])
+            spamwriter.writerow([temp[6], temp[0], temp[1], temp[2], temp[3], temp[4], temp[5], temp[6]])
 
     temp_records = db.session.query(ConcTemp.temp1, ConcTemp.temp2, ConcTemp.temp3, ConcTemp.temp4, ConcTemp.temp5, ConcTemp.temp6, ConcTemp.datetime).filter(and_(ConcGateway.gateway_addr == gatewayAddr, ConcNode.node_addr == nodeAddr, ConcTemp.datetime.between(startTime, endTime))).order_by(ConcTemp.datetime.desc()).all()
 
