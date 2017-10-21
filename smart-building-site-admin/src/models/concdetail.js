@@ -20,7 +20,7 @@ export default modelExtend(model, {
             dispatch({ type: 'fetchAirConRealtimeTemp' })
             dispatch({ type: 'fetchAirConTemps' })
             dispatch({ type: 'fetchAirConTempRecord' })
-          }, 300000)
+          }, 30000)
         } else {
           console.log('we are at:', pathname)
         }
