@@ -5,36 +5,36 @@ import { Table, Popconfirm, Button ,DatePicker, message} from 'antd';
 const ConcTempRecord = ({ concTempRecord }) => {
   const columns = [{
     title: '节点',
-    dataIndex: 'node',
-    key: 'node',
+    dataIndex: 'conc_node_id',
+    key: 'conc_node_id',
   }, {
     title: '时间',
-    dataIndex: 'time',
-    key: 'time',
+    dataIndex: 'datetime',
+    key: 'datetime',
   }, {
     title: '温度1',
-    dataIndex: 'Temp1',
-    key: 'Temp1',
+    dataIndex: 'temp1',
+    key: 'temp1',
   }, {
     title: '温度2',
-    dataIndex: 'Temp2',
-    key: 'Temp2',
+    dataIndex: 'temp2',
+    key: 'temp2',
   },{
     title: '温度3',
-    dataIndex: 'Temp3',
-    key: 'Temp3',
+    dataIndex: 'temp3',
+    key: 'temp3',
   }, {
     title: '温度4',
-    dataIndex: 'Temp4',
-    key: 'Temp4',
+    dataIndex: 'temp4',
+    key: 'temp4',
   }, {
     title: '温度5',
-    dataIndex: 'Temp5',
-    key: 'Temp5',
+    dataIndex: 'temp5',
+    key: 'temp5',
   },{
     title: '温度6',
-    dataIndex: 'Temp6',
-    key: 'Temp6',
+    dataIndex: 'temp6',
+    key: 'temp6',
   },
   ];
   console.log('concTempRecord', concTempRecord)
