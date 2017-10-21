@@ -62,6 +62,10 @@ const Routers = function ({ history, app }) {
       path: '/concdetail',
       models: () => [import('./models/concdetail')],
       component: () => import('./routes/concdetail/'),
+    }, {
+      path: '/concrete_history',
+      models: () => [import('./models/concreteHistory')],
+      component: () => import('./routes/concreteHistory/'),
     },
 
   ]

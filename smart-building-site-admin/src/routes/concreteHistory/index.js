@@ -13,14 +13,14 @@ const EnumPostStatus = {
 }
 
 
-const GrainHistory = ({ post, dispatch, loading, location }) => {
+const ConcHistory = ({ post, dispatch, loading, location }) => {
   const { list, pagination } = post
   const { query = {}, pathname } = location
 
   const listProps = {
     pagination,
     dataSource: list,
-    loading: loading.effects['grainhistory/query'],
+    loading: loading.effects['concreteHistory/query'],
     onChange (page) {
       dispatch(routerRedux.push({
         pathname,
@@ -55,11 +55,11 @@ const GrainHistory = ({ post, dispatch, loading, location }) => {
   </div>)
 }
 
-GrainHistory.propTypes = {
+ConcHistory.propTypes = {
   post: PropTypes.object,
   loading: PropTypes.object,
   location: PropTypes.object,
   dispatch: PropTypes.func,
 }
 
-export default connect(({ post, loading }) => ({ post, loading }))(GrainHistory)
+export default connect(({ post, loading }) => ({ post, loading }))(ConcHistory)

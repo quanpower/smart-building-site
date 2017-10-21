@@ -1,16 +1,16 @@
 import modelExtend from 'dva-model-extend'
-import { getGrainHistory } from 'services/grain'
+import { getConcTempRecord } from 'services/concrete'
 import { pageModel } from 'models/common'
 import queryString from 'query-string'
 
 export default modelExtend(pageModel, {
 
-  namespace: 'post',
+  namespace: 'concreteHistory',
 
   subscriptions: {
     setup ({ dispatch, history }) {
       history.listen((location) => {
-        if (location.pathname === '/grain_history') {
+        if (location.pathname === '/concrete_history') {
           dispatch({ type: 'query',
             payload: {
               status: 2,
@@ -25,7 +25,7 @@ export default modelExtend(pageModel, {
     * query ({
                payload,
              }, { call, put }) {
-      const data = yield call(getGrainHistory, payload)
+      const data = yield call(getConcTempRecord, payload)
       if (data.success) {
         yield put({
           type: 'querySuccess',

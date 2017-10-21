@@ -3,19 +3,21 @@ import { Table } from 'antd'
 import styles from './List.less'
 
 const List = ({ ...tableProps }) => {
-  const columns = [
-    {
-      title: '仓号',
-      dataIndex: 'grain_barn_id',
+  const columns = [{
+    title: '序号',
+    dataIndex: 'key',
+    }, {
+      title: '图标',
+      dataIndex: 'image',
       className: styles.image,
       width: 64,
       render: text => <img alt="Feture" width={26} src={text} />,
     }, {
-      title: '网关',
-      dataIndex: 'lora_gateway_id',
-    }, {
       title: '节点',
-      dataIndex: 'lora_node_id',
+      dataIndex: 'conc_node_id',
+    }, {
+      title: '日期时间',
+      dataIndex: 'datetime',
     }, {
       title: '温度1',
       dataIndex: 'temp1',
@@ -26,11 +28,17 @@ const List = ({ ...tableProps }) => {
       title: '温度3',
       dataIndex: 'temp3',
     }, {
+      title: '温度4',
+      dataIndex: 'temp4',
+    }, {
+      title: '温度5',
+      dataIndex: 'temp5',
+    }, {
+      title: '温度6',
+      dataIndex: 'temp6',
+    }, {
       title: '电池',
       dataIndex: 'battery_vol',
-    }, {
-      title: '日期时间',
-      dataIndex: 'datetime',
     },
   ]
 

@@ -230,7 +230,7 @@ class ConcTempRecord(Resource):
         print(startTime)
         print(endTime)
         temp_records = db.session.query(ConcTemp.temp1, ConcTemp.temp2, ConcTemp.temp3, ConcTemp.temp4, ConcTemp.temp5,
-            ConcTemp.temp6, ConcTemp.datetime,ConcTemp.conc_node_id).filter(ConcTemp.datetime.between(startTime, endTime)).order_by(ConcTemp.datetime.desc()).all()
+            ConcTemp.temp6, ConcTemp.battery_vol, ConcTemp.datetime,ConcTemp.conc_node_id).filter(ConcTemp.datetime.between(startTime, endTime)).order_by(ConcTemp.datetime.desc()).all()
         # temp_records = db.session.query(ConcTemp.temp1, ConcTemp.temp2, ConcTemp.temp3, ConcTemp.temp4, ConcTemp.temp5,
         #     ConcTemp.temp6, ConcTemp.datetime).join(ConcNode, ConcNode.id == ConcTemp.conc_node_id).join(
         #     ConcGateway, ConcGateway.id == ConcTemp.conc_gateway_id).filter(and_(ConcGateway.gateway_addr == gatewayAddr,
@@ -238,7 +238,10 @@ class ConcTempRecord(Resource):
 
         temp_log = []
         for i in xrange(len(temp_records)):
-            temp_log.append({"key": i,"node": temp_records[i][7], "time": temp_records[i][6].strftime("%Y-%m-%d %H:%M:%S"), "Temp1": temp_records[i][0], "Temp2": temp_records[i][1], "Temp3": temp_records[i][2], "Temp4": temp_records[i][3], "Temp5": temp_records[i][4], "Temp6": temp_records[i][5]})
+            temp_log.append({"key": i,"image":"http://dummyimage.com/48x48/{1}/757575.png&text={0}".format(temp_records[i][7],index_color(i)[1:]),
+                "conc_node_id": temp_records[i][8], "datetime": temp_records[i][7].strftime("%Y-%m-%d %H:%M:%S"), "temp1": temp_records[i][0], 
+                "temp2": temp_records[i][1], "temp3": temp_records[i][2], "temp4": temp_records[i][3], "temp5": temp_records[i][4], 
+                "temp6": temp_records[i][5], "battery_vol":temp_records[i][6]})
 
         temps_reverse = temp_log[::-1]
 
@@ -259,9 +262,9 @@ class ConcDashboard(Resource):
     def return_status(self,a,b,c):
         max_abc = max(a,b,c)
         print('max_abc:', max_abc)
-        if max_abc < 35:
+        if max_abc < 60:
             return 1
-        elif (35 <= max_abc) and (max_abc <= 50):
+        elif (60 <= max_abc) and (max_abc <= 70):
             return 2
         else:
             return 3
@@ -276,11 +279,12 @@ class ConcDashboard(Resource):
                 ConcNode.node_addr == node[0]).order_by(
                 ConcTemp.datetime.desc()).first()
             if temps:
-                status = {"name":node[0]+u"号测温点","status":self.return_status(temps[0], temps[1], temps[2]),"content":"上：{0}℃, 中：{1}℃, 下：{2}℃".format(str(temps[0]),str(temps[1]),str(temps[2])),"avatar":"http://dummyimage.com/48x48/f279aa/757575.png&text={0}".format(node[0]),"date":datetime.datetime.strftime(temps[3], "%Y-%m-%d %H:%M:%S")}
+                status = {"name":node[0]+u"号测温点","status":self.return_status(temps[0], temps[1], temps[2]),
+                    "content":"上：{0}℃, 中：{1}℃, 下：{2}℃".format(str(temps[0]),str(temps[1]),str(temps[2])),
+                    "avatar":"http://dummyimage.com/48x48/f279aa/757575.png&text={0}".format(node[0]),"date":datetime.datetime.strftime(temps[3], "%Y-%m-%d %H:%M:%S")}
                 statuses.append(status)
             else:
                 statuses = []
-        # conc_dash_dic = {"concDash":[{"name":"1","status":1,"content":"上：25.7℃, 中：26.5℃, 下： 31℃","avatar":"http://dummyimage.com/48x48/f279aa/757575.png&text=1","date":"2017-08-19 23:38:45"},{"name":"White","status":2,"content":"上：25.7℃, 中：26.5℃, 下： 31℃","avatar":"http://dummyimage.com/48x48/79cdf2/757575.png&text=W","date":"2017-04-22 14:17:06"},{"name":"Martin","status":3,"content":"上：25.7℃, 中：26.5℃, 下： 31℃","avatar":"http://dummyimage.com/48x48/f1f279/757575.png&text=M","date":"2017-05-07 04:29:13"},{"name":"Johnson","status":1,"content":"上：25.7℃, 中：26.5℃, 下： 31℃","avatar":"http://dummyimage.com/48x48/d079f2/757575.png&text=J","date":"2017-01-14 02:38:37"},{"name":"Jones","status":2,"content":"上：25.7℃, 中：26.5℃, 下： 31℃","avatar":"http://dummyimage.com/48x48/79f2ac/757575.png&text=J","date":"2017-07-08 20:05:50"}]}
         conc_dash_dic = {"concDash":statuses}
         print("conc_dash_dic", conc_dash_dic)
 
@@ -306,13 +310,13 @@ class Menus(Resource):
             'id': '2',
             'bpid': '1',
             'name': '历史记录',
-            'icon': 'bulb',
-            'route': '/booking_admin',
+            'icon': 'calendar',
+            'route': '/concrete_history',
           },{
             'id': '5',
             'bpid': '1',
             'name': '图表报告',
-            'icon': 'code-o',
+            'icon': 'area-chart',
           },
           {
             'id': '51',
@@ -364,7 +368,7 @@ class Menus(Resource):
             'id': '7',
             'bpid': '1',
             'name': '系统设置',
-            'icon': 'shopping-cart',
+            'icon': 'setting',
             'route': '/system_setting',
           },
 

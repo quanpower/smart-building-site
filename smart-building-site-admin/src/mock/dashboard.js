@@ -95,9 +95,9 @@ const Dashboard = Mock.mock({
     },
   ],
   quote: {
-    name: '福建直属库',
+    name: '江苏扬建-印象城',
     title: '公告栏',
-    content: '福建直属库欢迎您!',
+    content: '大体积混凝土测温系统',
     avatar: 'http://img.hb.aicdn.com/bc442cf0cc6f7940dcc567e465048d1a8d634493198c4-sPx5BR_fw236',
   },
   concRealtimeTemp: [
