@@ -238,7 +238,7 @@ class ConcTempRecord(Resource):
 
         temp_log = []
         for i in xrange(len(temp_records)):
-            temp_log.append({"key": i,"image":"http://dummyimage.com/48x48/{1}/757575.png&text={0}".format(temp_records[i][7],index_color(i)[1:]),
+            temp_log.append({"key": i,"image":"http://dummyimage.com/48x48/{1}/757575.png&text={0}".format(temp_records[i][7],index_color(1)[1:]),
                 "conc_node_id": temp_records[i][8], "datetime": temp_records[i][7].strftime("%Y-%m-%d %H:%M:%S"), "temp1": temp_records[i][0], 
                 "temp2": temp_records[i][1], "temp3": temp_records[i][2], "temp4": temp_records[i][3], "temp5": temp_records[i][4], 
                 "temp6": temp_records[i][5], "battery_vol":temp_records[i][6]})
