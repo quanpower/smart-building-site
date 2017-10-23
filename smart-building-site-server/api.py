@@ -266,7 +266,8 @@ class ConcTempRecord(Resource):
 
         startTime = datetime.datetime.strptime(startTime0, "%Y-%m-%d %H:%M:%S")
         endTime = datetime.datetime.strptime(endTime0, "%Y-%m-%d %H:%M:%S")
-
+        print('-------startTime--------')
+        print('--------endTime-------')
         print(startTime)
         print(endTime)
         temp_records = db.session.query(ConcTemp.temp1, ConcTemp.temp2, ConcTemp.temp3, ConcTemp.temp4, ConcTemp.temp5,
