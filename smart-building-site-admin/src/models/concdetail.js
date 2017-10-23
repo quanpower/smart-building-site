@@ -16,11 +16,64 @@ export default modelExtend(model, {
       history.listen(({ pathname }) => {
         if (pathname === '/concdetail') {
           console.log('---update concRealtimeTemp begin---')
-          setInterval(() => {
-            dispatch({ type: 'fetchAirConRealtimeTemp' })
-            dispatch({ type: 'fetchAirConTemps' })
-            dispatch({ type: 'fetchAirConTempRecord' })
-          }, 10000)
+
+
+          dispatch({
+            type: 'concdetail/fetchAirConRealtimeTemp',
+            payload: {
+              gatewayAddr: '1',
+              nodeAddr: '112',
+            },
+          })
+
+          dispatch({
+            type: 'concdetail/fetchAirConTemps',
+            payload: {
+              gatewayAddr: '1',
+              nodeAddr: '112',
+            },
+          })
+
+          dispatch({
+            type: 'concdetail/fetchAirConTempRecord',
+            payload: {
+              gatewayAddr: '1',
+              nodeAddr: '112',
+              startTime: '2017-10-20 00:00:00',
+              endTime: '2017-10-30 23:00:00',
+            },
+          })
+
+          // setInterval(() => {
+          //
+          //
+          //   dispatch({
+          //     type: 'concdetail/fetchAirConRealtimeTemp',
+          //     payload: {
+          //       gatewayAddr: '1',
+          //       nodeAddr: '112',
+          //     },
+          //   })
+          //
+          //   dispatch({
+          //     type: 'concdetail/fetchAirConTemps',
+          //     payload: {
+          //       gatewayAddr: '1',
+          //       nodeAddr: '112',
+          //     },
+          //   })
+          //
+          //   dispatch({
+          //     type: 'concdetail/fetchAirConTempRecord',
+          //     payload: {
+          //       gatewayAddr: '1',
+          //       nodeAddr: '112',
+          //       startTime: '2017-10-20 00:00:00',
+          //       endTime: '2017-10-30 23:00:00',
+          //     },
+          //   })
+          //
+          // }, 10000)
         } else {
           console.log('we are at:', pathname)
         }
