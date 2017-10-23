@@ -85,13 +85,24 @@ function ConcDetail ({ concdetail, dispatch }) {
       {/*<Loader spinning={loading.models.dashboard} />*/}
       <Row gutter={24}>
         {/*todo*/}
-        <Select {...onSelectProps} defaultValue='112' style={{ width: 120 }} >
-          <OptGroup label="A-1">
-            <Option value="110">110</Option>
-            <Option value="112">112</Option>
-            <Option value="114">114</Option>
-          </OptGroup>
-        </Select>
+
+
+        <Col lg={24} md={24}>
+          <Card bordered={false}
+                bodyStyle={{
+                  padding: '24px 36px 24px 0',
+                }}
+          >
+            <Select {...onSelectProps} defaultValue='112' style={{ width: 120 }} >
+              <OptGroup label="A-1">
+                <Option value="110">110</Option>
+                <Option value="112">112</Option>
+                <Option value="114">114</Option>
+              </OptGroup>
+            </Select>
+
+          </Card>
+        </Col>
 
         {concCards}
         <Col lg={24} md={24}>
