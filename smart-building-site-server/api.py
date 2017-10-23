@@ -230,7 +230,7 @@ class ConcTempRecord(Resource):
         print(startTime)
         print(endTime)
         temp_records = db.session.query(ConcTemp.temp1, ConcTemp.temp2, ConcTemp.temp3, ConcTemp.temp4, ConcTemp.temp5,
-            ConcTemp.temp6, ConcTemp.battery_vol, ConcTemp.datetime,ConcTemp.conc_node_id).filter(ConcTemp.datetime.between(startTime, endTime)).order_by(ConcTemp.datetime.desc()).all()
+            ConcTemp.temp6, ConcTemp.battery_vol, ConcTemp.datetime,ConcTemp.conc_node_id).filter(and_(ConcTemp.conc_node_id == nodeAddr, ConcTemp.datetime.between(startTime, endTime))).order_by(ConcTemp.datetime.desc()).all()
         # temp_records = db.session.query(ConcTemp.temp1, ConcTemp.temp2, ConcTemp.temp3, ConcTemp.temp4, ConcTemp.temp5,
         #     ConcTemp.temp6, ConcTemp.datetime).join(ConcNode, ConcNode.id == ConcTemp.conc_node_id).join(
         #     ConcGateway, ConcGateway.id == ConcTemp.conc_gateway_id).filter(and_(ConcGateway.gateway_addr == gatewayAddr,
