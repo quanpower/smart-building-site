@@ -27,12 +27,13 @@ function ConcDetail ({ concdetail, dispatch }) {
   console.log('concTemps are:', concTemps)
   console.log('concTempRecord are:', concTempRecord)
 
+  const { Option, OptGroup } = Select
+
   const onSelectProps = {
     // title: '确定提交操作？',
     // okText: '确定',
     // cancelText: '取消',
 
-    const { Option, OptGroup } = Select;
 
   // function handleChange(value) {
   //   console.log(value); // { key: "lucy", label: "Lucy (101)" }
