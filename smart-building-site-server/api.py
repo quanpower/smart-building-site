@@ -246,7 +246,7 @@ class ConcTempRecord(Resource):
     '''
         get the temp records by the input datetime. %H:%M:S%
     '''
-    def get(self, gatewayAddr, nodeAddr, startTime, endTime):
+    def get(self):
 
         parser = reqparse.RequestParser()
         parser.add_argument('gatewayAddr', type=str)
