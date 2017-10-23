@@ -84,7 +84,7 @@ function ConcDetail ({ concdetail, dispatch }) {
     <div>
       {/*<Loader spinning={loading.models.dashboard} />*/}
       <Row gutter={24}>
-
+        {/*todo*/}
         <Select {...onSelectProps} defaultValue='112' style={{ width: 120 }} >
           <OptGroup label="A-1">
             <Option value="110">110</Option>
