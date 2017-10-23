@@ -169,7 +169,19 @@ class Username(Resource):
 
 class ConcRealtimeTemp(Resource):
 
-    def get(self, gatewayAddr, nodeAddr):
+    def get(self):
+
+        parser = reqparse.RequestParser()
+        parser.add_argument('gatewayAddr', type=str)
+        parser.add_argument('nodeAddr', type=str)
+
+        args = parser.parse_args()
+
+        print('-------ConcRealtimeTemp args---------', args)
+
+        gatewayAddr = args['gatewayAddr']
+        nodeAddr = args['nodeAddr']
+
         temps = db.session.query(ConcTemp.temp1, ConcTemp.temp2, ConcTemp.temp3, ConcTemp.temp4, ConcTemp.temp5, ConcTemp.temp6, ConcTemp.battery_vol, 
             ConcTemp.conc_node_id).filter(ConcTemp.conc_node_id == nodeAddr).order_by(ConcTemp.datetime.desc()).first()
         # temps = db.session.query(ConcTemp.temp1, ConcTemp.temp2, ConcTemp.temp3, ConcTemp.temp4, ConcTemp.temp5, ConcTemp.temp6, ConcTemp.battery_vol, 
@@ -193,7 +205,18 @@ class ConcTemps(Resource):
     '''
         get the lates 10 temps.
     '''
-    def get(self, gatewayAddr, nodeAddr):
+    def get(self):
+
+        parser = reqparse.RequestParser()
+        parser.add_argument('gatewayAddr', type=str)
+        parser.add_argument('nodeAddr', type=str)
+
+        args = parser.parse_args()
+
+        print('-------ConcTemps args---------', args)
+
+        gatewayAddr = args['gatewayAddr']
+        nodeAddr = args['nodeAddr']
 
         temp_records = db.session.query(ConcTemp.temp1, ConcTemp.temp2, ConcTemp.temp3, ConcTemp.temp4, ConcTemp.temp5, ConcTemp.temp6, ConcTemp.datetime
             ).filter(ConcTemp.conc_node_id == nodeAddr).order_by(ConcTemp.datetime.desc()).limit(10).all()
@@ -224,8 +247,25 @@ class ConcTempRecord(Resource):
         get the temp records by the input datetime. %H:%M:S%
     '''
     def get(self, gatewayAddr, nodeAddr, startTime, endTime):
-        startTime = datetime.datetime.strptime(startTime, "%Y-%m-%d %H:%M:%S")
-        endTime = datetime.datetime.strptime(endTime, "%Y-%m-%d %H:%M:%S")
+
+        parser = reqparse.RequestParser()
+        parser.add_argument('gatewayAddr', type=str)
+        parser.add_argument('nodeAddr', type=str)
+        parser.add_argument('startTime', type=str)
+        parser.add_argument('endTime', type=str)
+
+        args = parser.parse_args()
+
+        print('-------ConcTempRecord args---------', args)
+
+        gatewayAddr = args['gatewayAddr']
+        nodeAddr = args['nodeAddr']
+        startTime0 = args['startTime']
+        endTime0 = args['endTime']
+
+
+        startTime = datetime.datetime.strptime(startTime0, "%Y-%m-%d %H:%M:%S")
+        endTime = datetime.datetime.strptime(endTime0, "%Y-%m-%d %H:%M:%S")
 
         print(startTime)
         print(endTime)
@@ -515,9 +555,9 @@ api.add_resource(TodoList, '/todos')
 api.add_resource(Todo, '/todos/<todo_id>')
 api.add_resource(Username, '/username/<username>')
 api.add_resource(Menus, '/api/v1/menus')
-api.add_resource(ConcRealtimeTemp, '/api/v1/concrete_realtime_temperature/<gatewayAddr>/<nodeAddr>')
-api.add_resource(ConcTemps, '/api/v1/concrete_temperatures/<gatewayAddr>/<nodeAddr>')
-api.add_resource(ConcTempRecord, '/api/v1/concrete_temperature_record/<gatewayAddr>/<nodeAddr>/<startTime>/<endTime>')
+api.add_resource(ConcRealtimeTemp, '/api/v1/concrete_realtime_temperature')
+api.add_resource(ConcTemps, '/api/v1/concrete_temperatures')
+api.add_resource(ConcTempRecord, '/api/v1/concrete_temperature_record')
 api.add_resource(ConcDashboard, '/api/v1/concrete_dashboard')
 
 

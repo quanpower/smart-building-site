@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'dva'
-import { Row, Col, Card } from 'antd'
+import { Row, Col, Card, Select } from 'antd'
 import { color } from 'utils'
 import { Loader } from 'components'
 import {  ConcRealtimeTemp, ConcTemps, ConcTempRecord } from './components'
@@ -15,11 +15,65 @@ const bodyStyle = {
   },
 }
 
-function ConcDetail ({ concdetail }) {
+
+
+
+
+
+function ConcDetail ({ concdetail, dispatch }) {
+
   const { concRealtimeTemp, concTemps, concTempRecord } = concdetail
   console.log('concRealtimeTemp:', concRealtimeTemp)
   console.log('concTemps:', concTemps)
   console.log('concTempRecord:', concTempRecord)
+
+  const onSelectProps = {
+    // title: '确定提交操作？',
+    // okText: '确定',
+    // cancelText: '取消',
+
+    // const Option = Select.Option;
+
+  // function handleChange(value) {
+  //   console.log(value); // { key: "lucy", label: "Lucy (101)" }
+  // }
+
+    onChange (value) {
+      console.log('选中节点是：', value)
+      message.success('筛选成功！')
+
+      dispatch({
+        type: 'concdetail/fetchAirConRealtimeTemp',
+        payload: {
+          gatewayAddr: '1',
+          nodeAddr: value,
+        },
+      })
+
+      dispatch({
+        type: 'concdetail/fetchAirConTemps',
+        payload: {
+          gatewayAddr: '1',
+          nodeAddr: value,
+        },
+      })
+
+      dispatch({
+        type: 'concdetail/fetchAirConTempRecord',
+        payload: {
+          gatewayAddr: '1',
+          nodeAddr: value,
+          startTime: '2017-10-20 00:00:00',
+          endTime: '2017-10-30 23:00:00',
+        },
+      })
+
+    },
+
+  }
+
+
+
 
   const concCards = concRealtimeTemp.map((item, key) => (<Col key={key} lg={6} md={6}>
     <ConcRealtimeTemp {...item} />
@@ -29,6 +83,13 @@ function ConcDetail ({ concdetail }) {
     <div>
       {/*<Loader spinning={loading.models.dashboard} />*/}
       <Row gutter={24}>
+
+        <Select {...onSelectProps} labelInValue defaultValue={{ key: '112' }} style={{ width: 120 }} >
+          <Option value="110">110</Option>
+          <Option value="112">112</Option>
+          <Option value="114">114</Option>
+        </Select>
+
         {concCards}
         <Col lg={24} md={24}>
           <Card bordered={false}

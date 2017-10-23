@@ -15,7 +15,7 @@ export default modelExtend(model, {
     setup ({ dispatch, history }) {
       history.listen(({ pathname }) => {
         if (pathname === '/concdetail') {
-          console.log('update concRealtimeTemp begin---')
+          console.log('---update concRealtimeTemp begin---')
           setInterval(() => {
             dispatch({ type: 'fetchAirConRealtimeTemp' })
             dispatch({ type: 'fetchAirConTemps' })
@@ -31,7 +31,7 @@ export default modelExtend(model, {
 
   effects: {
     * fetchAirConRealtimeTemp ({ payload }, { call, put }) {
-      const concRealtimeTemp = yield call(getConcTemp, {})
+      const concRealtimeTemp = yield call(getConcTemp, payload)
       console.log('concRealtimeTemp', concRealtimeTemp)
       yield put({
         type: 'updateAirConRealtimeTemp',
@@ -42,7 +42,7 @@ export default modelExtend(model, {
     },
 
     * fetchAirConTemps ({payload }, { call, put }) {
-      const concTemps = yield call(getConcTemps, {})
+      const concTemps = yield call(getConcTemps, payload)
       console.log('concTemps', concTemps)
 
       yield put({
@@ -54,7 +54,7 @@ export default modelExtend(model, {
     },
 
     * fetchAirConTempRecord ({payload }, { call, put }) {
-      const concTempRecord = yield call(getConcTempRecord, {})
+      const concTempRecord = yield call(getConcTempRecord, payload)
       console.log('concTempRecord', concTempRecord)
       yield put({
         type: 'updateAirConTempRecord',
