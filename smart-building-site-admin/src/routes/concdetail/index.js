@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'dva'
-import { Row, Col, Card, Select } from 'antd'
+import { Row, Col, Card, Select, message } from 'antd'
 import { color } from 'utils'
 import { Loader } from 'components'
 import {  ConcRealtimeTemp, ConcTemps, ConcTempRecord } from './components'
