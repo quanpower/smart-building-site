@@ -135,3 +135,5 @@ ConcDetail.propTypes = {
 }
 
 export default connect(({ concdetail }) => ({ concdetail }))(ConcDetail)
+
+
