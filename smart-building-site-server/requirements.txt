@@ -35,6 +35,6 @@ six==1.10.0
 SQLAlchemy==1.1.13
 Werkzeug==0.12.2
 WTForms==2.1
-xlrd==1.1.0
-xlwt==1.3.0
+openpyxl==2.4.9
+
 
