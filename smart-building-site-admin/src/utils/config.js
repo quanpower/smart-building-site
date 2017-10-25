@@ -44,6 +44,8 @@ module.exports = {
     concTemp: `${APIV2}/concrete_realtime_temperature`,
     concTemps: `${APIV2}/concrete_temperatures`,
     concTempRecord: `${APIV2}/concrete_temperature_record`,
+    concTempHourRecord: `${APIV2}/concrete_temperature_hour_record`,
+
     concDashboard: `${APIV2}/concrete_dashboard`,
 
   },

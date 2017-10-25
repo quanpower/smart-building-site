@@ -278,7 +278,11 @@ class ConcTempRecord(Resource):
         #     ConcNode.node_addr == nodeAddr, ConcTemp.datetime.between(startTime, endTime))).order_by(ConcTemp.datetime.desc()).all()
 
         temp_log = []
-        for i in xrange(len(temp_records)):
+        temp_records_hour = []
+        for i in xrange(0,len(temp_records)):
+            if temp_records[i][7].hour == temp_records[i-1][7].hour:
+                temp_records_hour.append(temp_records[i])
+
             temp_log.append({"key": i,"image":"http://dummyimage.com/48x48/{1}/757575.png&text={0}".format(temp_records[i][7],index_color(1)[1:]),
                 "conc_node_id": temp_records[i][8], "datetime": temp_records[i][7].strftime("%Y-%m-%d %H:%M:%S"), "temp1": temp_records[i][0], 
                 "temp2": temp_records[i][1], "temp3": temp_records[i][2], "temp4": temp_records[i][3], "temp5": temp_records[i][4], 
@@ -297,6 +301,73 @@ class ConcTempRecord(Resource):
 
     def put(self, todo_id):
         pass
+
+
+class ConcTempHourRecord(Resource):
+    '''
+        get the temp records by the input datetime. %H:%M:S%
+    '''
+    def get(self):
+
+        parser = reqparse.RequestParser()
+        parser.add_argument('gatewayAddr', type=str)
+        parser.add_argument('nodeAddr', type=str)
+        parser.add_argument('startTime', type=str)
+        parser.add_argument('endTime', type=str)
+
+        args = parser.parse_args()
+
+        print('-------ConcTempHourRecord args---------', args)
+
+        gatewayAddr = args['gatewayAddr']
+        nodeAddr = args['nodeAddr']
+        startTime0 = args['startTime']
+        endTime0 = args['endTime']
+
+
+
+
+        startTime = datetime.datetime.strptime(startTime0, "%Y-%m-%d %H:%M:%S")
+        endTime = datetime.datetime.strptime(endTime0, "%Y-%m-%d %H:%M:%S")
+        print('-------startTime--------')
+        print('--------endTime-------')
+        print(startTime)
+        print(endTime)
+
+        select_hours = []
+
+        temp_records = db.session.query(ConcTemp.temp1, ConcTemp.temp2, ConcTemp.temp3, ConcTemp.temp4, ConcTemp.temp5,
+            ConcTemp.temp6, ConcTemp.battery_vol, ConcTemp.datetime,ConcTemp.conc_node_id).filter(and_(ConcTemp.conc_node_id == nodeAddr, ConcTemp.datetime.between(startTime, endTime))).order_by(ConcTemp.datetime.desc()).all()
+        # temp_records = db.session.query(ConcTemp.temp1, ConcTemp.temp2, ConcTemp.temp3, ConcTemp.temp4, ConcTemp.temp5,
+        #     ConcTemp.temp6, ConcTemp.datetime).join(ConcNode, ConcNode.id == ConcTemp.conc_node_id).join(
+        #     ConcGateway, ConcGateway.id == ConcTemp.conc_gateway_id).filter(and_(ConcGateway.gateway_addr == gatewayAddr,
+        #     ConcNode.node_addr == nodeAddr, ConcTemp.datetime.between(startTime, endTime))).order_by(ConcTemp.datetime.desc()).all()
+
+        temp_log = []
+        temp_records_hour = []
+        for i in xrange(0,len(temp_records)):
+            if temp_records[i][7].hour == temp_records[i-1][7].hour:
+                temp_records_hour.append(temp_records[i])
+
+            temp_log.append({"key": i,"image":"http://dummyimage.com/48x48/{1}/757575.png&text={0}".format(temp_records[i][7],index_color(1)[1:]),
+                "conc_node_id": temp_records[i][8], "datetime": temp_records[i][7].strftime("%Y-%m-%d %H:%M:%S"), "temp1": temp_records[i][0], 
+                "temp2": temp_records[i][1], "temp3": temp_records[i][2], "temp4": temp_records[i][3], "temp5": temp_records[i][4], 
+                "temp6": temp_records[i][5], "battery_vol":temp_records[i][6]})
+
+        temps_reverse = temp_log[::-1]
+
+        print('------------temps_records--------------')
+        print(temps_reverse)
+
+        temps_record_dict = {"concTempRecord": temp_log}
+        return temps_record_dict
+
+    def delete(self, todo_id):
+        pass
+
+    def put(self, todo_id):
+        pass
+
 
 
 class ConcDashboard(Resource):
@@ -559,6 +630,8 @@ api.add_resource(Menus, '/api/v1/menus')
 api.add_resource(ConcRealtimeTemp, '/api/v1/concrete_realtime_temperature')
 api.add_resource(ConcTemps, '/api/v1/concrete_temperatures')
 api.add_resource(ConcTempRecord, '/api/v1/concrete_temperature_record')
+api.add_resource(ConcTempHourRecord, '/api/v1/concrete_temperature_hour_record')
+
 api.add_resource(ConcDashboard, '/api/v1/concrete_dashboard')
 
 

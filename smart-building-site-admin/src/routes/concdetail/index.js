@@ -17,9 +17,6 @@ const bodyStyle = {
 
 
 
-
-
-
 function ConcDetail ({ concdetail, dispatch }) {
 
   const { concRealtimeTemp, concTemps, concTempRecord } = concdetail
@@ -30,14 +27,7 @@ function ConcDetail ({ concdetail, dispatch }) {
   const { Option, OptGroup } = Select
 
   const onSelectProps = {
-    // title: '确定提交操作？',
-    // okText: '确定',
-    // cancelText: '取消',
 
-
-  // function handleChange(value) {
-  //   console.log(value); // { key: "lucy", label: "Lucy (101)" }
-  // }
 
     onChange (value) {
       console.log('选中节点是：', value)

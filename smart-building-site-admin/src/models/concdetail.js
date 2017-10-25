@@ -2,7 +2,7 @@ import { parse } from 'qs'
 import modelExtend from 'dva-model-extend'
 // import { query } from 'services/dashboard'
 import { model } from 'models/common'
-import { getConcTemp, getConcTemps, getConcTempRecord, getConcDashboard } from "../services/concrete"
+import { getConcTemp, getConcTemps, getConcTempRecord, getConcTempHourRecord, getConcDashboard } from "../services/concrete"
 
 export default modelExtend(model, {
   namespace: 'concdetail',
@@ -116,6 +116,17 @@ export default modelExtend(model, {
         }
       })
     },
+
+    * fetchAirConTempHourRecord ({payload }, { call, put }) {
+      const concTempRecord = yield call(getConcTempRecord, payload)
+      console.log('concTempRecord', concTempRecord)
+      yield put({
+        type: 'updateAirConTempRecord',
+        payload: {
+          concTempRecord: concTempRecord.concTempRecord,
+        }
+      })
+    },
   },
 
   reducers: {
@@ -132,6 +143,12 @@ export default modelExtend(model, {
     },
 
     updateAirConTempRecord (state, { payload: {concTempRecord} }) {
+      return {
+        ...state, concTempRecord: concTempRecord,
+      }
+    },
+
+    updateAirConTempHourRecord (state, { payload: {concTempRecord} }) {
       return {
         ...state, concTempRecord: concTempRecord,
       }

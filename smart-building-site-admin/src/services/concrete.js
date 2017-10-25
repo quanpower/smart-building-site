@@ -27,6 +27,16 @@ export async function getConcTempRecord (params) {
   })
 }
 
+
+export async function getConcTempHourRecord (params) {
+  return request({
+    url: concTempHourRecord,
+    method: 'get',
+    data: params,
+  })
+}
+
+
 export async function getConcDashboard (params) {
   return request({
     url: concDashboard,
