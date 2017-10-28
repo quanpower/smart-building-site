@@ -93,6 +93,8 @@ function ConcDetail ({ concdetail, dispatch }) {
                 <Option value="102">102</Option>
                 <Option value="103">103</Option>
                 <Option value="105">105</Option>
+                <Option value="109">103</Option>
+                <Option value="115">105</Option>
               </OptGroup>
             </Select>
 
