@@ -55,7 +55,7 @@ function ConcDetail ({ concdetail, dispatch }) {
           gatewayAddr: '1',
           nodeAddr: value,
           startTime: '2017-10-20 00:00:00',
-          endTime: '2017-10-30 23:00:00',
+          endTime: '2017-12-30 23:00:00',
         },
       })
 
