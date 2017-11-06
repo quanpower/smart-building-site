@@ -13,8 +13,8 @@ const EnumPostStatus = {
 }
 
 
-const ConcHistory = ({ post, dispatch, loading, location }) => {
-  const { list, pagination } = post
+const ConcHistory = ({ concreteHistory, dispatch, loading, location }) => {
+  const { list, pagination } = concreteHistory
   const { query = {}, pathname } = location
 
   const listProps = {
@@ -62,4 +62,4 @@ ConcHistory.propTypes = {
   dispatch: PropTypes.func,
 }
 
-export default connect(({ post, loading }) => ({ post, loading }))(ConcHistory)
+export default connect(({ concreteHistory, loading }) => ({ concreteHistory, loading }))(ConcHistory)

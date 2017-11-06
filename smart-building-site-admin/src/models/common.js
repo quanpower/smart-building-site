@@ -27,6 +27,7 @@ const pageModel = modelExtend(model, {
   reducers: {
     querySuccess (state, { payload }) {
       const { list, pagination } = payload
+      console.log('query_success:', payload)
       return {
         ...state,
         list,

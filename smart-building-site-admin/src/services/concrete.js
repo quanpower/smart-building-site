@@ -1,7 +1,7 @@
 import { request, config } from 'utils'
 
 const { api } = config
-const { concTemp, concTemps, concTempRecord, concDashboard } = api
+const { concTemp, concTemps, concTempRecord, concDashboard, concHistoryRecord } = api
 
 export async function getConcTemp (params) {
   return request({
@@ -22,6 +22,15 @@ export async function getConcTemps (params) {
 export async function getConcTempRecord (params) {
   return request({
     url: concTempRecord,
+    method: 'get',
+    data: params,
+  })
+}
+
+
+export async function getConcHistoryRecord (params) {
+  return request({
+    url: concHistoryRecord,
     method: 'get',
     data: params,
   })

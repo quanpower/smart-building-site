@@ -1,5 +1,5 @@
 import modelExtend from 'dva-model-extend'
-import { getConcTempRecord } from 'services/concrete'
+import { getConcHistoryRecord } from 'services/concrete'
 import { pageModel } from 'models/common'
 import queryString from 'query-string'
 
@@ -11,10 +11,13 @@ export default modelExtend(pageModel, {
     setup ({ dispatch, history }) {
       history.listen((location) => {
         if (location.pathname === '/concrete_history') {
+          console.log('in concrete_history')
           dispatch({ type: 'query',
             payload: {
-              status: 2,
-              ...queryString.parse(location.search),
+              gatewayAddr: '1',
+              nodeAddr: '112',
+              startTime: '2017-10-20 00:00:00',
+              endTime: '2017-12-30 23:00:00',
             } })
         }
       })
@@ -25,12 +28,13 @@ export default modelExtend(pageModel, {
     * query ({
                payload,
              }, { call, put }) {
-      const data = yield call(getConcTempRecord, payload)
+      const data = yield call(getConcHistoryRecord, payload)
+      console.log('data is:', data)
       if (data.success) {
         yield put({
           type: 'querySuccess',
           payload: {
-            list: data.data,
+            list: data.list,
             pagination: {
               current: Number(payload.page) || 1,
               pageSize: Number(payload.pageSize) || 10,
