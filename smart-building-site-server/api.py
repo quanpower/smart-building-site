@@ -460,6 +460,7 @@ class ConcDashboard(Resource):
                 statuses = []
         conc_dash_dic = {"concDash":statuses}
         print("conc_dash_dic", conc_dash_dic)
+        return conc_dash_dic
 
 
 class Menus(Resource):

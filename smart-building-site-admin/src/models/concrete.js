@@ -10,7 +10,7 @@ export default modelExtend(model, {
   state: {
     weather: {
       city: '上海',
-      temperature: '31',
+      temperature: '16',
       name: '晴',
       icon: '//s5.sencdn.com/web/icons/3d_50/2.png',
     },
@@ -23,10 +23,10 @@ export default modelExtend(model, {
     setup ({ dispatch, history }) {
       history.listen(({pathname}) => {
         if (pathname === '/concrete') {
-          dispatch({ type: 'query' })
+          dispatch({ type: 'fetchConcreteDashboard' })
           console.log('----update ConcTemps begin---')
           setInterval(() => {
-            dispatch({type: 'fetchAirConDashboard'})
+            dispatch({type: 'fetchConcreteDashboard'})
 
           }, 10000)
         } else {
@@ -46,7 +46,7 @@ export default modelExtend(model, {
       })
     },
 
-    * fetchAirConDashboard ({ payload }, { call, put }) {
+    * fetchConcreteDashboard ({ payload }, { call, put }) {
       const concDash = yield call(getConcDashboard)
       console.log('concDash are :', concDash)
       yield put({
@@ -59,7 +59,7 @@ export default modelExtend(model, {
   },
 
   reducers: {
-    updateAirConDashboard (state, { payload: { concDash } }) {
+    updateConcDashboard (state, { payload: { concDash } }) {
       console.log('reducers concDash are :', concDash)
 
       return { ...state, concDash: concDash }
