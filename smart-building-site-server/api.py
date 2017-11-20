@@ -8,6 +8,9 @@ from flasgger import Swagger, swag_from
 import random
 from utils import index_color
 import datetime
+import generate_report
+from openpyxl import load_workbook
+from openpyxl import Workbook
 
 app = Flask(__name__)
 api = Api(app)
@@ -29,11 +32,9 @@ TODOS = {
     '42': {'task': 'Use Flasgger'}
 }
 
-
 def abort_if_todo_doesnt_exist(todo_id):
     if todo_id not in TODOS:
         abort(404, message="Todo {} doesn't exist".format(todo_id))
-
 
 parser = reqparse.RequestParser()
 parser.add_argument('task')
@@ -263,6 +264,8 @@ class ConcTempRecord(Resource):
         startTime0 = args['startTime']
         endTime0 = args['endTime']
 
+        datetime_list = generate_report.generate_datetime_list(startTime0,endTime0)
+        # print(datetime_list)
 
         startTime = datetime.datetime.strptime(startTime0, "%Y-%m-%d %H:%M:%S")
         endTime = datetime.datetime.strptime(endTime0, "%Y-%m-%d %H:%M:%S")
@@ -278,20 +281,60 @@ class ConcTempRecord(Resource):
         #     ConcNode.node_addr == nodeAddr, ConcTemp.datetime.between(startTime, endTime))).order_by(ConcTemp.datetime.desc()).all()
 
         temp_log = []
-        temp_records_hour = []
-        for i in xrange(0,len(temp_records)):
-            if temp_records[i][7].hour == temp_records[i-1][7].hour:
-                temp_records_hour.append(temp_records[i])
 
+        for i in xrange(0,len(temp_records)):
             temp_log.append({"key": i,"image":"http://dummyimage.com/48x48/{1}/757575.png&text={0}".format(temp_records[i][7],index_color(1)[1:]),
                 "conc_node_id": temp_records[i][8], "datetime": temp_records[i][7].strftime("%Y-%m-%d %H:%M:%S"), "temp1": temp_records[i][0], 
                 "temp2": temp_records[i][1], "temp3": temp_records[i][2], "temp4": temp_records[i][3], "temp5": temp_records[i][4], 
                 "temp6": temp_records[i][5], "battery_vol":temp_records[i][6]})
 
+
+        temp_records_hour = []
+        for j in xrange(0,len(datetime_list)):
+            dt = datetime_list[j]
+            print('---------dt.hour--------')
+            print(dt.hour)
+            temp_record_hour = []
+            for i in xrange(0,len(temp_records)):
+                if temp_records[i][7].hour == dt.hour:
+                    print('-----temp_records[i]-----')
+                    print(temp_records[i])
+                    temp_record_hour.append(temp_records[i])
+
+            temp_records_hour.append(temp_record_hour)
+
+
+
+        print('--------temp_records_hour----------')
+        print(temp_records_hour)
+
+        wb = load_workbook('concrete_template.xlsx')
+        ws = wb.active
+
+        for i in xrange(0,len(temp_records_hour)):
+            temp_to_insert = temp_records_hour[i]
+            if temp_to_insert:
+                temp1 = temp_to_insert[0][0]
+                temp2 = temp_to_insert[0][1]
+                temp3 = temp_to_insert[0][2]
+                month = temp_to_insert[0][7].month
+                day = temp_to_insert[0][7].day
+                hour = temp_to_insert[0][7].hour
+                nodeAddr = temp_to_insert[0][8]
+
+                ws.cell(row=3*i+8, column=9, value=temp1)
+                ws.cell(row=3*i+9, column=9, value=temp2)
+                ws.cell(row=3*i+10, column=9, value=temp3)
+                ws.cell(row=3*i+8, column=2, value=month)
+                ws.cell(row=3*i+8, column=3, value=day)
+                ws.cell(row=3*i+8, column=4, value=hour)
+
+        wb.save(str(nodeAddr) + '_' + startTime0 + '_' + endTime0 + '_' "sample.xlsx")
+
         temps_reverse = temp_log[::-1]
 
         print('------------temps_records--------------')
-        print(temps_reverse)
+        # print(temps_reverse)
 
         temps_record_dict = {"concTempRecord": temp_log}
         return temps_record_dict
