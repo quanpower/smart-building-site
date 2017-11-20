@@ -289,47 +289,47 @@ class ConcTempRecord(Resource):
                 "temp6": temp_records[i][5], "battery_vol":temp_records[i][6]})
 
 
-        temp_records_hour = []
-        for j in xrange(0,len(datetime_list)):
-            dt = datetime_list[j]
-            print('---------dt.hour--------')
-            print(dt.hour)
-            temp_record_hour = []
-            for i in xrange(0,len(temp_records)):
-                if temp_records[i][7].hour == dt.hour:
-                    print('-----temp_records[i]-----')
-                    print(temp_records[i])
-                    temp_record_hour.append(temp_records[i])
+        # temp_records_hour = []
+        # for j in xrange(0,len(datetime_list)):
+        #     dt = datetime_list[j]
+        #     print('---------dt.hour--------')
+        #     print(dt.hour)
+        #     temp_record_hour = []
+        #     for i in xrange(0,len(temp_records)):
+        #         if temp_records[i][7].hour == dt.hour:
+        #             print('-----temp_records[i]-----')
+        #             print(temp_records[i])
+        #             temp_record_hour.append(temp_records[i])
 
-            temp_records_hour.append(temp_record_hour)
+        #     temp_records_hour.append(temp_record_hour)
 
 
 
-        print('--------temp_records_hour----------')
-        print(temp_records_hour)
+        # print('--------temp_records_hour----------')
+        # print(temp_records_hour)
 
-        wb = load_workbook('concrete_template.xlsx')
-        ws = wb.active
+        # wb = load_workbook('concrete_template.xlsx')
+        # ws = wb.active
 
-        for i in xrange(0,len(temp_records_hour)):
-            temp_to_insert = temp_records_hour[i]
-            if temp_to_insert:
-                temp1 = temp_to_insert[0][0]
-                temp2 = temp_to_insert[0][1]
-                temp3 = temp_to_insert[0][2]
-                month = temp_to_insert[0][7].month
-                day = temp_to_insert[0][7].day
-                hour = temp_to_insert[0][7].hour
-                nodeAddr = temp_to_insert[0][8]
+        # for i in xrange(0,len(temp_records_hour)):
+        #     temp_to_insert = temp_records_hour[i]
+        #     if temp_to_insert:
+        #         temp1 = temp_to_insert[0][0]
+        #         temp2 = temp_to_insert[0][1]
+        #         temp3 = temp_to_insert[0][2]
+        #         month = temp_to_insert[0][7].month
+        #         day = temp_to_insert[0][7].day
+        #         hour = temp_to_insert[0][7].hour
+        #         nodeAddr = temp_to_insert[0][8]
 
-                ws.cell(row=3*i+8, column=9, value=temp1)
-                ws.cell(row=3*i+9, column=9, value=temp2)
-                ws.cell(row=3*i+10, column=9, value=temp3)
-                ws.cell(row=3*i+8, column=2, value=month)
-                ws.cell(row=3*i+8, column=3, value=day)
-                ws.cell(row=3*i+8, column=4, value=hour)
+        #         ws.cell(row=3*i+8, column=9, value=temp1)
+        #         ws.cell(row=3*i+9, column=9, value=temp2)
+        #         ws.cell(row=3*i+10, column=9, value=temp3)
+        #         ws.cell(row=3*i+8, column=2, value=month)
+        #         ws.cell(row=3*i+8, column=3, value=day)
+        #         ws.cell(row=3*i+8, column=4, value=hour)
 
-        wb.save(str(nodeAddr) + '_' + startTime0 + '_' + endTime0 + '_' "sample.xlsx")
+        # wb.save(str(nodeAddr) + '_' + startTime0 + '_' + endTime0 + '_' "sample.xlsx")
 
         temps_reverse = temp_log[::-1]
 
