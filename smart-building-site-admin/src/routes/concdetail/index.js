@@ -89,8 +89,6 @@ function ConcDetail ({ concdetail, dispatch }) {
               {/*</OptGroup>*/}
               <OptGroup label="A-2">
                 <Option value="105">105</Option>
-                {/*<Option value="107">107</Option>*/}
-
                 <Option value="115">115</Option>
               </OptGroup>
               <OptGroup label="A-3">
