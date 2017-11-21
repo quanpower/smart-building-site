@@ -88,11 +88,9 @@ function ConcDetail ({ concdetail, dispatch }) {
                 {/*<Option value="112">112</Option>*/}
               {/*</OptGroup>*/}
               <OptGroup label="A-2">
-                <Option value="101">101</Option>
                 <Option value="105">105</Option>
                 {/*<Option value="107">107</Option>*/}
 
-                <Option value="109">109</Option>
                 <Option value="115">115</Option>
               </OptGroup>
               <OptGroup label="A-3">
@@ -108,6 +106,10 @@ function ConcDetail ({ concdetail, dispatch }) {
               <OptGroup label="B-1">
                 <Option value="103">103</Option>
                 <Option value="112">112</Option>
+              </OptGroup>
+              <OptGroup label="B-3">
+                <Option value="101">101</Option>
+                <Option value="109">109</Option>
               </OptGroup>
             </Select>
 
