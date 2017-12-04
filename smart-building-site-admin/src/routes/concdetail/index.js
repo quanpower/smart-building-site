@@ -84,30 +84,9 @@ function ConcDetail ({ concdetail, dispatch }) {
                 }}
           >
             <Select {...onSelectProps} defaultValue='112' style={{ width: 120 }} >
-              {/*<OptGroup label="A-1">*/}
-                {/*<Option value="112">112</Option>*/}
-              {/*</OptGroup>*/}
-              <OptGroup label="A-2">
-                <Option value="105">105</Option>
-                <Option value="115">115</Option>
-              </OptGroup>
-              <OptGroup label="A-3">
-                <Option value="102">102</Option>
-                <Option value="110">110</Option>
-                <Option value="114">114</Option>
-              </OptGroup>
-              <OptGroup label="A-6">
-                <Option value="104">104</Option>
+
+              <OptGroup label="B-9">
                 <Option value="108">108</Option>
-                <Option value="113">113</Option>
-              </OptGroup>
-              <OptGroup label="B-1">
-                <Option value="103">103</Option>
-                <Option value="112">112</Option>
-              </OptGroup>
-              <OptGroup label="B-3">
-                <Option value="101">101</Option>
-                <Option value="109">109</Option>
               </OptGroup>
             </Select>
 
