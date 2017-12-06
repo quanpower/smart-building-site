@@ -16,7 +16,6 @@ const bodyStyle = {
 }
 
 
-
 function ConcDetail ({ concdetail, dispatch }) {
 
   const { concRealtimeTemp, concTemps, concTempRecord } = concdetail
@@ -83,18 +82,14 @@ function ConcDetail ({ concdetail, dispatch }) {
                   padding: '24px 36px 24px 0',
                 }}
           >
-            <Select {...onSelectProps} defaultValue='112' style={{ width: 120 }} >
-              <OptGroup label="B-1">
-                <Option value="103">103</Option>
-                <Option value="112">112</Option>
-              </OptGroup>
-              <OptGroup label="B-3">
-                <Option value="101">101</Option>
-                <Option value="109">109</Option>
-              </OptGroup>
+            <Select {...onSelectProps} defaultValue='108' style={{ width: 120 }} >
               <OptGroup label="B-9">
                 <Option value="108">108</Option>
               </OptGroup>
+              <OptGroup label="B-13">
+                <Option value="101">101</Option>
+              </OptGroup>
+
             </Select>
 
           </Card>

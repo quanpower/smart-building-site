@@ -1,0 +1,513 @@
+2017-12-05 19:36:07,448 - mqtt_subscribe1.py[line:42] - INFO: this is a logger info message
+2017-12-05 19:36:07,448 - mqtt_subscribe1.py[line:43] - WARNING: this is a logger warning message
+2017-12-05 19:36:07,449 - mqtt_subscribe1.py[line:44] - ERROR: this is a logger error message
+2017-12-05 19:36:07,450 - mqtt_subscribe1.py[line:45] - CRITICAL: this is a logger critical message
+2017-12-05 19:36:07,453 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending CONNECT (u1, p1, wr0, wq0, wf0, c1, k60) client_id=yangjian_yixiangcheng3
+2017-12-05 19:36:07,534 - mqtt_subscribe1.py[line:77] - INFO: Log:Received CONNACK (0, 0)
+2017-12-05 19:36:07,535 - mqtt_subscribe1.py[line:68] - INFO: OnConnetc, rc: 0
+2017-12-05 19:36:07,575 - mqtt_subscribe1.py[line:77] - INFO: Log:Received SUBACK
+2017-12-05 19:36:07,575 - mqtt_subscribe1.py[line:74] - INFO: Subscribed: 1 (0,)
+2017-12-05 19:37:07,644 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 19:37:07,684 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 19:38:07,749 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 19:38:07,790 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 19:39:07,854 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 19:39:07,894 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 19:39:28,721 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PUBLISH (d0, q0, r0, m0), '002/upstream', ...  (16 bytes)
+2017-12-05 19:39:28,722 - mqtt_subscribe1.py[line:82] - INFO: 2017-12-05 19:39:28: 002/upstream 0  offffffffffff¦
+2017-12-05 19:39:28,722 - mqtt_subscribe1.py[line:87] - INFO: -------units-----
+2017-12-05 19:39:28,722 - mqtt_subscribe1.py[line:88] - INFO: (32, 111, 3, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 166)
+2017-12-05 19:39:28,753 - mqtt_subscribe1.py[line:93] - INFO: CRC checked!
+2017-12-05 19:39:28,754 - mqtt_subscribe1.py[line:117] - INFO: --------packet_data--------
+2017-12-05 19:39:28,755 - mqtt_subscribe1.py[line:118] - INFO: 0x206f03666666666666666666666666a6
+2017-12-05 19:39:28,756 - mqtt_subscribe1.py[line:119] - INFO: --------packet_data.bin--------
+2017-12-05 19:39:28,756 - mqtt_subscribe1.py[line:120] - INFO: 00100000011011110000001101100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011010100110
+2017-12-05 19:39:28,757 - mqtt_subscribe1.py[line:235] - INFO: -------- 6 channel temp data process beginning -----------
+2017-12-05 19:39:28,758 - mqtt_subscribe1.py[line:259] - INFO: -------------------
+2017-12-05 19:39:28,758 - mqtt_subscribe1.py[line:260] - INFO: node_addr: 111
+2017-12-05 19:39:28,759 - mqtt_subscribe1.py[line:261] - INFO: -------------------
+2017-12-05 19:39:28,759 - mqtt_subscribe1.py[line:272] - INFO: ---------temps----------
+2017-12-05 19:39:28,760 - mqtt_subscribe1.py[line:274] - INFO: temp1: 2621.4
+2017-12-05 19:39:28,760 - mqtt_subscribe1.py[line:275] - INFO: temp2: 2621.4
+2017-12-05 19:39:28,760 - mqtt_subscribe1.py[line:276] - INFO: temp3: 2621.4
+2017-12-05 19:39:28,760 - mqtt_subscribe1.py[line:277] - INFO: temp4: 2621.4
+2017-12-05 19:39:28,760 - mqtt_subscribe1.py[line:278] - INFO: temp5: 2621.4
+2017-12-05 19:39:28,761 - mqtt_subscribe1.py[line:279] - INFO: temp6: 2621.4
+2017-12-05 19:39:28,761 - mqtt_subscribe1.py[line:280] - INFO: -------------------
+2017-12-05 19:39:28,761 - mqtt_subscribe1.py[line:282] - INFO: battery_vol: 3
+2017-12-05 19:40:08,000 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 19:40:08,040 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 19:41:08,105 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 19:41:08,146 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 19:42:08,213 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 19:42:08,274 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 19:42:08,556 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PUBLISH (d0, q0, r0, m0), '002/upstream', ...  (16 bytes)
+2017-12-05 19:42:08,557 - mqtt_subscribe1.py[line:82] - INFO: 2017-12-05 19:42:08: 002/upstream 0  rffffffffffff£
+2017-12-05 19:42:08,557 - mqtt_subscribe1.py[line:87] - INFO: -------units-----
+2017-12-05 19:42:08,558 - mqtt_subscribe1.py[line:88] - INFO: (32, 114, 3, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 163)
+2017-12-05 19:42:08,559 - mqtt_subscribe1.py[line:93] - INFO: CRC checked!
+2017-12-05 19:42:08,559 - mqtt_subscribe1.py[line:117] - INFO: --------packet_data--------
+2017-12-05 19:42:08,560 - mqtt_subscribe1.py[line:118] - INFO: 0x207203666666666666666666666666a3
+2017-12-05 19:42:08,561 - mqtt_subscribe1.py[line:119] - INFO: --------packet_data.bin--------
+2017-12-05 19:42:08,562 - mqtt_subscribe1.py[line:120] - INFO: 00100000011100100000001101100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011010100011
+2017-12-05 19:42:08,562 - mqtt_subscribe1.py[line:235] - INFO: -------- 6 channel temp data process beginning -----------
+2017-12-05 19:42:08,563 - mqtt_subscribe1.py[line:259] - INFO: -------------------
+2017-12-05 19:42:08,563 - mqtt_subscribe1.py[line:260] - INFO: node_addr: 114
+2017-12-05 19:42:08,564 - mqtt_subscribe1.py[line:261] - INFO: -------------------
+2017-12-05 19:42:08,564 - mqtt_subscribe1.py[line:272] - INFO: ---------temps----------
+2017-12-05 19:42:08,564 - mqtt_subscribe1.py[line:274] - INFO: temp1: 2621.4
+2017-12-05 19:42:08,564 - mqtt_subscribe1.py[line:275] - INFO: temp2: 2621.4
+2017-12-05 19:42:08,564 - mqtt_subscribe1.py[line:276] - INFO: temp3: 2621.4
+2017-12-05 19:42:08,564 - mqtt_subscribe1.py[line:277] - INFO: temp4: 2621.4
+2017-12-05 19:42:08,564 - mqtt_subscribe1.py[line:278] - INFO: temp5: 2621.4
+2017-12-05 19:42:08,565 - mqtt_subscribe1.py[line:279] - INFO: temp6: 2621.4
+2017-12-05 19:42:08,565 - mqtt_subscribe1.py[line:280] - INFO: -------------------
+2017-12-05 19:42:08,565 - mqtt_subscribe1.py[line:282] - INFO: battery_vol: 3
+2017-12-05 19:42:15,156 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PUBLISH (d0, q0, r0, m0), '002/upstream', ...  (16 bytes)
+2017-12-05 19:42:15,157 - mqtt_subscribe1.py[line:82] - INFO: 2017-12-05 19:42:15: 002/upstream 0  nffffffffffff§
+2017-12-05 19:42:15,157 - mqtt_subscribe1.py[line:87] - INFO: -------units-----
+2017-12-05 19:42:15,157 - mqtt_subscribe1.py[line:88] - INFO: (32, 110, 3, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 167)
+2017-12-05 19:42:15,158 - mqtt_subscribe1.py[line:93] - INFO: CRC checked!
+2017-12-05 19:42:15,158 - mqtt_subscribe1.py[line:117] - INFO: --------packet_data--------
+2017-12-05 19:42:15,159 - mqtt_subscribe1.py[line:118] - INFO: 0x206e03666666666666666666666666a7
+2017-12-05 19:42:15,159 - mqtt_subscribe1.py[line:119] - INFO: --------packet_data.bin--------
+2017-12-05 19:42:15,159 - mqtt_subscribe1.py[line:120] - INFO: 00100000011011100000001101100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011010100111
+2017-12-05 19:42:15,159 - mqtt_subscribe1.py[line:235] - INFO: -------- 6 channel temp data process beginning -----------
+2017-12-05 19:42:15,160 - mqtt_subscribe1.py[line:259] - INFO: -------------------
+2017-12-05 19:42:15,161 - mqtt_subscribe1.py[line:260] - INFO: node_addr: 110
+2017-12-05 19:42:15,161 - mqtt_subscribe1.py[line:261] - INFO: -------------------
+2017-12-05 19:42:15,161 - mqtt_subscribe1.py[line:272] - INFO: ---------temps----------
+2017-12-05 19:42:15,161 - mqtt_subscribe1.py[line:274] - INFO: temp1: 2621.4
+2017-12-05 19:42:15,162 - mqtt_subscribe1.py[line:275] - INFO: temp2: 2621.4
+2017-12-05 19:42:15,162 - mqtt_subscribe1.py[line:276] - INFO: temp3: 2621.4
+2017-12-05 19:42:15,162 - mqtt_subscribe1.py[line:277] - INFO: temp4: 2621.4
+2017-12-05 19:42:15,162 - mqtt_subscribe1.py[line:278] - INFO: temp5: 2621.4
+2017-12-05 19:42:15,163 - mqtt_subscribe1.py[line:279] - INFO: temp6: 2621.4
+2017-12-05 19:42:15,163 - mqtt_subscribe1.py[line:280] - INFO: -------------------
+2017-12-05 19:42:15,163 - mqtt_subscribe1.py[line:282] - INFO: battery_vol: 3
+2017-12-05 19:43:08,340 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 19:43:08,382 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 19:44:08,450 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 19:44:08,494 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 19:44:25,336 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PUBLISH (d0, q0, r0, m0), '002/upstream', ...  (16 bytes)
+2017-12-05 19:44:25,336 - mqtt_subscribe1.py[line:82] - INFO: 2017-12-05 19:44:25: 002/upstream 0  jffffffffffff¬
+2017-12-05 19:44:25,337 - mqtt_subscribe1.py[line:87] - INFO: -------units-----
+2017-12-05 19:44:25,337 - mqtt_subscribe1.py[line:88] - INFO: (32, 106, 2, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 172)
+2017-12-05 19:44:25,338 - mqtt_subscribe1.py[line:93] - INFO: CRC checked!
+2017-12-05 19:44:25,339 - mqtt_subscribe1.py[line:117] - INFO: --------packet_data--------
+2017-12-05 19:44:25,339 - mqtt_subscribe1.py[line:118] - INFO: 0x206a02666666666666666666666666ac
+2017-12-05 19:44:25,340 - mqtt_subscribe1.py[line:119] - INFO: --------packet_data.bin--------
+2017-12-05 19:44:25,341 - mqtt_subscribe1.py[line:120] - INFO: 00100000011010100000001001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011010101100
+2017-12-05 19:44:25,341 - mqtt_subscribe1.py[line:235] - INFO: -------- 6 channel temp data process beginning -----------
+2017-12-05 19:44:25,343 - mqtt_subscribe1.py[line:259] - INFO: -------------------
+2017-12-05 19:44:25,343 - mqtt_subscribe1.py[line:260] - INFO: node_addr: 106
+2017-12-05 19:44:25,344 - mqtt_subscribe1.py[line:261] - INFO: -------------------
+2017-12-05 19:44:25,344 - mqtt_subscribe1.py[line:272] - INFO: ---------temps----------
+2017-12-05 19:44:25,344 - mqtt_subscribe1.py[line:274] - INFO: temp1: 2621.4
+2017-12-05 19:44:25,345 - mqtt_subscribe1.py[line:275] - INFO: temp2: 2621.4
+2017-12-05 19:44:25,345 - mqtt_subscribe1.py[line:276] - INFO: temp3: 2621.4
+2017-12-05 19:44:25,345 - mqtt_subscribe1.py[line:277] - INFO: temp4: 2621.4
+2017-12-05 19:44:25,346 - mqtt_subscribe1.py[line:278] - INFO: temp5: 2621.4
+2017-12-05 19:44:25,346 - mqtt_subscribe1.py[line:279] - INFO: temp6: 2621.4
+2017-12-05 19:44:25,347 - mqtt_subscribe1.py[line:280] - INFO: -------------------
+2017-12-05 19:44:25,347 - mqtt_subscribe1.py[line:282] - INFO: battery_vol: 2
+2017-12-05 19:44:40,008 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PUBLISH (d0, q0, r0, m0), '002/upstream', ...  (16 bytes)
+2017-12-05 19:44:40,009 - mqtt_subscribe1.py[line:82] - INFO: 2017-12-05 19:44:40: 002/upstream 0  lc:ff  ffffm
+2017-12-05 19:44:40,009 - mqtt_subscribe1.py[line:87] - INFO: -------units-----
+2017-12-05 19:44:40,010 - mqtt_subscribe1.py[line:88] - INFO: (32, 108, 3, 1, 99, 2, 58, 102, 102, 0, 0, 102, 102, 102, 102, 109)
+2017-12-05 19:44:40,011 - mqtt_subscribe1.py[line:93] - INFO: CRC checked!
+2017-12-05 19:44:40,011 - mqtt_subscribe1.py[line:117] - INFO: --------packet_data--------
+2017-12-05 19:44:40,012 - mqtt_subscribe1.py[line:118] - INFO: 0x206c030163023a66660000666666666d
+2017-12-05 19:44:40,013 - mqtt_subscribe1.py[line:119] - INFO: --------packet_data.bin--------
+2017-12-05 19:44:40,013 - mqtt_subscribe1.py[line:120] - INFO: 00100000011011000000001100000001011000110000001000111010011001100110011000000000000000000110011001100110011001100110011001101101
+2017-12-05 19:44:40,013 - mqtt_subscribe1.py[line:235] - INFO: -------- 6 channel temp data process beginning -----------
+2017-12-05 19:44:40,015 - mqtt_subscribe1.py[line:259] - INFO: -------------------
+2017-12-05 19:44:40,015 - mqtt_subscribe1.py[line:260] - INFO: node_addr: 108
+2017-12-05 19:44:40,015 - mqtt_subscribe1.py[line:261] - INFO: -------------------
+2017-12-05 19:44:40,016 - mqtt_subscribe1.py[line:272] - INFO: ---------temps----------
+2017-12-05 19:44:40,017 - mqtt_subscribe1.py[line:274] - INFO: temp1: 35.5
+2017-12-05 19:44:40,017 - mqtt_subscribe1.py[line:275] - INFO: temp2: 57.0
+2017-12-05 19:44:40,018 - mqtt_subscribe1.py[line:276] - INFO: temp3: 2621.4
+2017-12-05 19:44:40,018 - mqtt_subscribe1.py[line:277] - INFO: temp4: 0.0
+2017-12-05 19:44:40,018 - mqtt_subscribe1.py[line:278] - INFO: temp5: 2621.4
+2017-12-05 19:44:40,019 - mqtt_subscribe1.py[line:279] - INFO: temp6: 2621.4
+2017-12-05 19:44:40,019 - mqtt_subscribe1.py[line:280] - INFO: -------------------
+2017-12-05 19:44:40,019 - mqtt_subscribe1.py[line:282] - INFO: battery_vol: 3
+2017-12-05 19:44:49,338 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PUBLISH (d0, q0, r0, m0), '002/upstream', ...  (16 bytes)
+2017-12-05 19:44:49,338 - mqtt_subscribe1.py[line:82] - INFO: 2017-12-05 19:44:49: 002/upstream 0  h Š'Xffffff
+2017-12-05 19:44:49,339 - mqtt_subscribe1.py[line:87] - INFO: -------units-----
+2017-12-05 19:44:49,339 - mqtt_subscribe1.py[line:88] - INFO: (32, 104, 3, 0, 138, 1, 39, 1, 88, 102, 102, 102, 102, 102, 102, 6)
+2017-12-05 19:44:49,340 - mqtt_subscribe1.py[line:93] - INFO: CRC checked!
+2017-12-05 19:44:49,341 - mqtt_subscribe1.py[line:117] - INFO: --------packet_data--------
+2017-12-05 19:44:49,341 - mqtt_subscribe1.py[line:118] - INFO: 0x206803008a0127015866666666666606
+2017-12-05 19:44:49,342 - mqtt_subscribe1.py[line:119] - INFO: --------packet_data.bin--------
+2017-12-05 19:44:49,343 - mqtt_subscribe1.py[line:120] - INFO: 00100000011010000000001100000000100010100000000100100111000000010101100001100110011001100110011001100110011001100110011000000110
+2017-12-05 19:44:49,343 - mqtt_subscribe1.py[line:235] - INFO: -------- 6 channel temp data process beginning -----------
+2017-12-05 19:44:49,345 - mqtt_subscribe1.py[line:259] - INFO: -------------------
+2017-12-05 19:44:49,346 - mqtt_subscribe1.py[line:260] - INFO: node_addr: 104
+2017-12-05 19:44:49,346 - mqtt_subscribe1.py[line:261] - INFO: -------------------
+2017-12-05 19:44:49,346 - mqtt_subscribe1.py[line:272] - INFO: ---------temps----------
+2017-12-05 19:44:49,346 - mqtt_subscribe1.py[line:274] - INFO: temp1: 13.8
+2017-12-05 19:44:49,347 - mqtt_subscribe1.py[line:275] - INFO: temp2: 29.5
+2017-12-05 19:44:49,347 - mqtt_subscribe1.py[line:276] - INFO: temp3: 34.4
+2017-12-05 19:44:49,347 - mqtt_subscribe1.py[line:277] - INFO: temp4: 2621.4
+2017-12-05 19:44:49,348 - mqtt_subscribe1.py[line:278] - INFO: temp5: 2621.4
+2017-12-05 19:44:49,348 - mqtt_subscribe1.py[line:279] - INFO: temp6: 2621.4
+2017-12-05 19:44:49,348 - mqtt_subscribe1.py[line:280] - INFO: -------------------
+2017-12-05 19:44:49,348 - mqtt_subscribe1.py[line:282] - INFO: battery_vol: 3
+2017-12-05 19:45:08,613 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 19:45:08,653 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 19:45:33,257 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PUBLISH (d0, q0, r0, m0), '002/upstream', ...  (16 bytes)
+2017-12-05 19:45:33,257 - mqtt_subscribe1.py[line:82] - INFO: 2017-12-05 19:45:33: 002/upstream 0  effffffffffff°
+2017-12-05 19:45:33,258 - mqtt_subscribe1.py[line:87] - INFO: -------units-----
+2017-12-05 19:45:33,258 - mqtt_subscribe1.py[line:88] - INFO: (32, 101, 3, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 176)
+2017-12-05 19:45:33,259 - mqtt_subscribe1.py[line:93] - INFO: CRC checked!
+2017-12-05 19:45:33,260 - mqtt_subscribe1.py[line:117] - INFO: --------packet_data--------
+2017-12-05 19:45:33,261 - mqtt_subscribe1.py[line:118] - INFO: 0x206503666666666666666666666666b0
+2017-12-05 19:45:33,262 - mqtt_subscribe1.py[line:119] - INFO: --------packet_data.bin--------
+2017-12-05 19:45:33,262 - mqtt_subscribe1.py[line:120] - INFO: 00100000011001010000001101100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011010110000
+2017-12-05 19:45:33,262 - mqtt_subscribe1.py[line:235] - INFO: -------- 6 channel temp data process beginning -----------
+2017-12-05 19:45:33,264 - mqtt_subscribe1.py[line:259] - INFO: -------------------
+2017-12-05 19:45:33,264 - mqtt_subscribe1.py[line:260] - INFO: node_addr: 101
+2017-12-05 19:45:33,265 - mqtt_subscribe1.py[line:261] - INFO: -------------------
+2017-12-05 19:45:33,265 - mqtt_subscribe1.py[line:272] - INFO: ---------temps----------
+2017-12-05 19:45:33,266 - mqtt_subscribe1.py[line:274] - INFO: temp1: 2621.4
+2017-12-05 19:45:33,266 - mqtt_subscribe1.py[line:275] - INFO: temp2: 2621.4
+2017-12-05 19:45:33,266 - mqtt_subscribe1.py[line:276] - INFO: temp3: 2621.4
+2017-12-05 19:45:33,267 - mqtt_subscribe1.py[line:277] - INFO: temp4: 2621.4
+2017-12-05 19:45:33,267 - mqtt_subscribe1.py[line:278] - INFO: temp5: 2621.4
+2017-12-05 19:45:33,268 - mqtt_subscribe1.py[line:279] - INFO: temp6: 2621.4
+2017-12-05 19:45:33,268 - mqtt_subscribe1.py[line:280] - INFO: -------------------
+2017-12-05 19:45:33,268 - mqtt_subscribe1.py[line:282] - INFO: battery_vol: 3
+2017-12-05 19:46:09,517 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 19:46:09,559 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 19:46:20,085 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PUBLISH (d0, q0, r0, m0), '002/upstream', ...  (16 bytes)
+2017-12-05 19:46:20,085 - mqtt_subscribe1.py[line:82] - INFO: 2017-12-05 19:46:20: 002/upstream 0  mffffffffffff¨
+2017-12-05 19:46:20,086 - mqtt_subscribe1.py[line:87] - INFO: -------units-----
+2017-12-05 19:46:20,086 - mqtt_subscribe1.py[line:88] - INFO: (32, 109, 3, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 168)
+2017-12-05 19:46:20,087 - mqtt_subscribe1.py[line:93] - INFO: CRC checked!
+2017-12-05 19:46:20,087 - mqtt_subscribe1.py[line:117] - INFO: --------packet_data--------
+2017-12-05 19:46:20,088 - mqtt_subscribe1.py[line:118] - INFO: 0x206d03666666666666666666666666a8
+2017-12-05 19:46:20,088 - mqtt_subscribe1.py[line:119] - INFO: --------packet_data.bin--------
+2017-12-05 19:46:20,089 - mqtt_subscribe1.py[line:120] - INFO: 00100000011011010000001101100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011010101000
+2017-12-05 19:46:20,089 - mqtt_subscribe1.py[line:235] - INFO: -------- 6 channel temp data process beginning -----------
+2017-12-05 19:46:20,090 - mqtt_subscribe1.py[line:259] - INFO: -------------------
+2017-12-05 19:46:20,090 - mqtt_subscribe1.py[line:260] - INFO: node_addr: 109
+2017-12-05 19:46:20,091 - mqtt_subscribe1.py[line:261] - INFO: -------------------
+2017-12-05 19:46:20,091 - mqtt_subscribe1.py[line:272] - INFO: ---------temps----------
+2017-12-05 19:46:20,091 - mqtt_subscribe1.py[line:274] - INFO: temp1: 2621.4
+2017-12-05 19:46:20,091 - mqtt_subscribe1.py[line:275] - INFO: temp2: 2621.4
+2017-12-05 19:46:20,092 - mqtt_subscribe1.py[line:276] - INFO: temp3: 2621.4
+2017-12-05 19:46:20,092 - mqtt_subscribe1.py[line:277] - INFO: temp4: 2621.4
+2017-12-05 19:46:20,092 - mqtt_subscribe1.py[line:278] - INFO: temp5: 2621.4
+2017-12-05 19:46:20,092 - mqtt_subscribe1.py[line:279] - INFO: temp6: 2621.4
+2017-12-05 19:46:20,093 - mqtt_subscribe1.py[line:280] - INFO: -------------------
+2017-12-05 19:46:20,093 - mqtt_subscribe1.py[line:282] - INFO: battery_vol: 3
+2017-12-05 19:47:10,247 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 19:47:10,288 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 19:48:10,360 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 19:48:10,401 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 19:49:10,472 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 19:49:10,515 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 19:50:10,584 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 19:50:10,625 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 19:51:10,755 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 19:51:10,822 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 19:52:10,889 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 19:52:10,929 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 19:53:10,999 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 19:53:11,040 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 19:54:11,104 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 19:54:11,146 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 19:55:11,213 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 19:55:11,277 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 19:56:11,346 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 19:56:11,387 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 19:56:38,172 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PUBLISH (d0, q0, r0, m0), '002/upstream', ...  (16 bytes)
+2017-12-05 19:56:38,183 - mqtt_subscribe1.py[line:82] - INFO: 2017-12-05 19:56:38: 002/upstream 0  offffffffffff¦
+2017-12-05 19:56:38,184 - mqtt_subscribe1.py[line:87] - INFO: -------units-----
+2017-12-05 19:56:38,184 - mqtt_subscribe1.py[line:88] - INFO: (32, 111, 3, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 166)
+2017-12-05 19:56:38,196 - mqtt_subscribe1.py[line:93] - INFO: CRC checked!
+2017-12-05 19:56:38,197 - mqtt_subscribe1.py[line:117] - INFO: --------packet_data--------
+2017-12-05 19:56:38,197 - mqtt_subscribe1.py[line:118] - INFO: 0x206f03666666666666666666666666a6
+2017-12-05 19:56:38,197 - mqtt_subscribe1.py[line:119] - INFO: --------packet_data.bin--------
+2017-12-05 19:56:38,207 - mqtt_subscribe1.py[line:120] - INFO: 00100000011011110000001101100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011010100110
+2017-12-05 19:56:38,208 - mqtt_subscribe1.py[line:235] - INFO: -------- 6 channel temp data process beginning -----------
+2017-12-05 19:56:38,210 - mqtt_subscribe1.py[line:259] - INFO: -------------------
+2017-12-05 19:56:38,210 - mqtt_subscribe1.py[line:260] - INFO: node_addr: 111
+2017-12-05 19:56:38,211 - mqtt_subscribe1.py[line:261] - INFO: -------------------
+2017-12-05 19:56:38,211 - mqtt_subscribe1.py[line:272] - INFO: ---------temps----------
+2017-12-05 19:56:38,211 - mqtt_subscribe1.py[line:274] - INFO: temp1: 2621.4
+2017-12-05 19:56:38,212 - mqtt_subscribe1.py[line:275] - INFO: temp2: 2621.4
+2017-12-05 19:56:38,212 - mqtt_subscribe1.py[line:276] - INFO: temp3: 2621.4
+2017-12-05 19:56:38,212 - mqtt_subscribe1.py[line:277] - INFO: temp4: 2621.4
+2017-12-05 19:56:38,213 - mqtt_subscribe1.py[line:278] - INFO: temp5: 2621.4
+2017-12-05 19:56:38,213 - mqtt_subscribe1.py[line:279] - INFO: temp6: 2621.4
+2017-12-05 19:56:38,213 - mqtt_subscribe1.py[line:280] - INFO: -------------------
+2017-12-05 19:56:38,213 - mqtt_subscribe1.py[line:282] - INFO: battery_vol: 3
+2017-12-05 19:57:11,569 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 19:57:11,622 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 19:58:11,688 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 19:58:11,728 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 19:59:11,799 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 19:59:11,840 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:00:11,910 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:00:11,951 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:00:16,976 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PUBLISH (d0, q0, r0, m0), '002/upstream', ...  (16 bytes)
+2017-12-05 20:00:16,977 - mqtt_subscribe1.py[line:82] - INFO: 2017-12-05 20:00:16: 002/upstream 0  nffffffffffff§
+2017-12-05 20:00:16,977 - mqtt_subscribe1.py[line:87] - INFO: -------units-----
+2017-12-05 20:00:16,977 - mqtt_subscribe1.py[line:88] - INFO: (32, 110, 3, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 167)
+2017-12-05 20:00:16,978 - mqtt_subscribe1.py[line:93] - INFO: CRC checked!
+2017-12-05 20:00:16,979 - mqtt_subscribe1.py[line:117] - INFO: --------packet_data--------
+2017-12-05 20:00:16,979 - mqtt_subscribe1.py[line:118] - INFO: 0x206e03666666666666666666666666a7
+2017-12-05 20:00:16,980 - mqtt_subscribe1.py[line:119] - INFO: --------packet_data.bin--------
+2017-12-05 20:00:16,980 - mqtt_subscribe1.py[line:120] - INFO: 00100000011011100000001101100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011010100111
+2017-12-05 20:00:16,981 - mqtt_subscribe1.py[line:235] - INFO: -------- 6 channel temp data process beginning -----------
+2017-12-05 20:00:16,982 - mqtt_subscribe1.py[line:259] - INFO: -------------------
+2017-12-05 20:00:16,983 - mqtt_subscribe1.py[line:260] - INFO: node_addr: 110
+2017-12-05 20:00:16,983 - mqtt_subscribe1.py[line:261] - INFO: -------------------
+2017-12-05 20:00:16,983 - mqtt_subscribe1.py[line:272] - INFO: ---------temps----------
+2017-12-05 20:00:16,984 - mqtt_subscribe1.py[line:274] - INFO: temp1: 2621.4
+2017-12-05 20:00:16,984 - mqtt_subscribe1.py[line:275] - INFO: temp2: 2621.4
+2017-12-05 20:00:16,984 - mqtt_subscribe1.py[line:276] - INFO: temp3: 2621.4
+2017-12-05 20:00:16,985 - mqtt_subscribe1.py[line:277] - INFO: temp4: 2621.4
+2017-12-05 20:00:16,985 - mqtt_subscribe1.py[line:278] - INFO: temp5: 2621.4
+2017-12-05 20:00:16,985 - mqtt_subscribe1.py[line:279] - INFO: temp6: 2621.4
+2017-12-05 20:00:16,986 - mqtt_subscribe1.py[line:280] - INFO: -------------------
+2017-12-05 20:00:16,986 - mqtt_subscribe1.py[line:282] - INFO: battery_vol: 3
+2017-12-05 20:01:09,236 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PUBLISH (d0, q0, r0, m0), '002/upstream', ...  (16 bytes)
+2017-12-05 20:01:09,237 - mqtt_subscribe1.py[line:82] - INFO: 2017-12-05 20:01:09: 002/upstream 0  lc;ff  ffffl
+2017-12-05 20:01:09,238 - mqtt_subscribe1.py[line:87] - INFO: -------units-----
+2017-12-05 20:01:09,238 - mqtt_subscribe1.py[line:88] - INFO: (32, 108, 3, 1, 99, 2, 59, 102, 102, 0, 0, 102, 102, 102, 102, 108)
+2017-12-05 20:01:09,239 - mqtt_subscribe1.py[line:93] - INFO: CRC checked!
+2017-12-05 20:01:09,265 - mqtt_subscribe1.py[line:117] - INFO: --------packet_data--------
+2017-12-05 20:01:09,266 - mqtt_subscribe1.py[line:118] - INFO: 0x206c030163023b66660000666666666c
+2017-12-05 20:01:09,267 - mqtt_subscribe1.py[line:119] - INFO: --------packet_data.bin--------
+2017-12-05 20:01:09,267 - mqtt_subscribe1.py[line:120] - INFO: 00100000011011000000001100000001011000110000001000111011011001100110011000000000000000000110011001100110011001100110011001101100
+2017-12-05 20:01:09,268 - mqtt_subscribe1.py[line:235] - INFO: -------- 6 channel temp data process beginning -----------
+2017-12-05 20:01:09,269 - mqtt_subscribe1.py[line:259] - INFO: -------------------
+2017-12-05 20:01:09,269 - mqtt_subscribe1.py[line:260] - INFO: node_addr: 108
+2017-12-05 20:01:09,270 - mqtt_subscribe1.py[line:261] - INFO: -------------------
+2017-12-05 20:01:09,270 - mqtt_subscribe1.py[line:272] - INFO: ---------temps----------
+2017-12-05 20:01:09,270 - mqtt_subscribe1.py[line:274] - INFO: temp1: 35.5
+2017-12-05 20:01:09,271 - mqtt_subscribe1.py[line:275] - INFO: temp2: 57.1
+2017-12-05 20:01:09,271 - mqtt_subscribe1.py[line:276] - INFO: temp3: 2621.4
+2017-12-05 20:01:09,271 - mqtt_subscribe1.py[line:277] - INFO: temp4: 0.0
+2017-12-05 20:01:09,272 - mqtt_subscribe1.py[line:278] - INFO: temp5: 2621.4
+2017-12-05 20:01:09,272 - mqtt_subscribe1.py[line:279] - INFO: temp6: 2621.4
+2017-12-05 20:01:09,272 - mqtt_subscribe1.py[line:280] - INFO: -------------------
+2017-12-05 20:01:09,272 - mqtt_subscribe1.py[line:282] - INFO: battery_vol: 3
+2017-12-05 20:01:12,369 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:01:12,410 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:01:35,546 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PUBLISH (d0, q0, r0, m0), '002/upstream', ...  (16 bytes)
+2017-12-05 20:01:35,547 - mqtt_subscribe1.py[line:82] - INFO: 2017-12-05 20:01:35: 002/upstream 0  effffffffffff°
+2017-12-05 20:01:35,548 - mqtt_subscribe1.py[line:87] - INFO: -------units-----
+2017-12-05 20:01:35,548 - mqtt_subscribe1.py[line:88] - INFO: (32, 101, 3, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 176)
+2017-12-05 20:01:35,549 - mqtt_subscribe1.py[line:93] - INFO: CRC checked!
+2017-12-05 20:01:35,549 - mqtt_subscribe1.py[line:117] - INFO: --------packet_data--------
+2017-12-05 20:01:35,550 - mqtt_subscribe1.py[line:118] - INFO: 0x206503666666666666666666666666b0
+2017-12-05 20:01:35,551 - mqtt_subscribe1.py[line:119] - INFO: --------packet_data.bin--------
+2017-12-05 20:01:35,551 - mqtt_subscribe1.py[line:120] - INFO: 00100000011001010000001101100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011010110000
+2017-12-05 20:01:35,552 - mqtt_subscribe1.py[line:235] - INFO: -------- 6 channel temp data process beginning -----------
+2017-12-05 20:01:35,553 - mqtt_subscribe1.py[line:259] - INFO: -------------------
+2017-12-05 20:01:35,554 - mqtt_subscribe1.py[line:260] - INFO: node_addr: 101
+2017-12-05 20:01:35,554 - mqtt_subscribe1.py[line:261] - INFO: -------------------
+2017-12-05 20:01:35,554 - mqtt_subscribe1.py[line:272] - INFO: ---------temps----------
+2017-12-05 20:01:35,555 - mqtt_subscribe1.py[line:274] - INFO: temp1: 2621.4
+2017-12-05 20:01:35,555 - mqtt_subscribe1.py[line:275] - INFO: temp2: 2621.4
+2017-12-05 20:01:35,555 - mqtt_subscribe1.py[line:276] - INFO: temp3: 2621.4
+2017-12-05 20:01:35,556 - mqtt_subscribe1.py[line:277] - INFO: temp4: 2621.4
+2017-12-05 20:01:35,556 - mqtt_subscribe1.py[line:278] - INFO: temp5: 2621.4
+2017-12-05 20:01:35,557 - mqtt_subscribe1.py[line:279] - INFO: temp6: 2621.4
+2017-12-05 20:01:35,557 - mqtt_subscribe1.py[line:280] - INFO: -------------------
+2017-12-05 20:01:35,557 - mqtt_subscribe1.py[line:282] - INFO: battery_vol: 3
+2017-12-05 20:01:53,740 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PUBLISH (d0, q0, r0, m0), '002/upstream', ...  (16 bytes)
+2017-12-05 20:01:53,741 - mqtt_subscribe1.py[line:82] - INFO: 2017-12-05 20:01:53: 002/upstream 0  jffffffffffff¬
+2017-12-05 20:01:53,741 - mqtt_subscribe1.py[line:87] - INFO: -------units-----
+2017-12-05 20:01:53,742 - mqtt_subscribe1.py[line:88] - INFO: (32, 106, 2, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 172)
+2017-12-05 20:01:53,742 - mqtt_subscribe1.py[line:93] - INFO: CRC checked!
+2017-12-05 20:01:53,743 - mqtt_subscribe1.py[line:117] - INFO: --------packet_data--------
+2017-12-05 20:01:53,743 - mqtt_subscribe1.py[line:118] - INFO: 0x206a02666666666666666666666666ac
+2017-12-05 20:01:53,744 - mqtt_subscribe1.py[line:119] - INFO: --------packet_data.bin--------
+2017-12-05 20:01:53,745 - mqtt_subscribe1.py[line:120] - INFO: 00100000011010100000001001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011010101100
+2017-12-05 20:01:53,745 - mqtt_subscribe1.py[line:235] - INFO: -------- 6 channel temp data process beginning -----------
+2017-12-05 20:01:53,747 - mqtt_subscribe1.py[line:259] - INFO: -------------------
+2017-12-05 20:01:53,747 - mqtt_subscribe1.py[line:260] - INFO: node_addr: 106
+2017-12-05 20:01:53,747 - mqtt_subscribe1.py[line:261] - INFO: -------------------
+2017-12-05 20:01:53,748 - mqtt_subscribe1.py[line:272] - INFO: ---------temps----------
+2017-12-05 20:01:53,748 - mqtt_subscribe1.py[line:274] - INFO: temp1: 2621.4
+2017-12-05 20:01:53,748 - mqtt_subscribe1.py[line:275] - INFO: temp2: 2621.4
+2017-12-05 20:01:53,748 - mqtt_subscribe1.py[line:276] - INFO: temp3: 2621.4
+2017-12-05 20:01:53,748 - mqtt_subscribe1.py[line:277] - INFO: temp4: 2621.4
+2017-12-05 20:01:53,749 - mqtt_subscribe1.py[line:278] - INFO: temp5: 2621.4
+2017-12-05 20:01:53,749 - mqtt_subscribe1.py[line:279] - INFO: temp6: 2621.4
+2017-12-05 20:01:53,749 - mqtt_subscribe1.py[line:280] - INFO: -------------------
+2017-12-05 20:01:53,749 - mqtt_subscribe1.py[line:282] - INFO: battery_vol: 2
+2017-12-05 20:02:12,889 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:02:12,930 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:02:20,259 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PUBLISH (d0, q0, r0, m0), '002/upstream', ...  (16 bytes)
+2017-12-05 20:02:20,260 - mqtt_subscribe1.py[line:82] - INFO: 2017-12-05 20:02:20: 002/upstream 0  h ‰'Xffffff
+2017-12-05 20:02:20,261 - mqtt_subscribe1.py[line:87] - INFO: -------units-----
+2017-12-05 20:02:20,261 - mqtt_subscribe1.py[line:88] - INFO: (32, 104, 3, 0, 137, 1, 39, 1, 88, 102, 102, 102, 102, 102, 102, 7)
+2017-12-05 20:02:20,262 - mqtt_subscribe1.py[line:93] - INFO: CRC checked!
+2017-12-05 20:02:20,263 - mqtt_subscribe1.py[line:117] - INFO: --------packet_data--------
+2017-12-05 20:02:20,263 - mqtt_subscribe1.py[line:118] - INFO: 0x20680300890127015866666666666607
+2017-12-05 20:02:20,264 - mqtt_subscribe1.py[line:119] - INFO: --------packet_data.bin--------
+2017-12-05 20:02:20,264 - mqtt_subscribe1.py[line:120] - INFO: 00100000011010000000001100000000100010010000000100100111000000010101100001100110011001100110011001100110011001100110011000000111
+2017-12-05 20:02:20,264 - mqtt_subscribe1.py[line:235] - INFO: -------- 6 channel temp data process beginning -----------
+2017-12-05 20:02:20,265 - mqtt_subscribe1.py[line:259] - INFO: -------------------
+2017-12-05 20:02:20,265 - mqtt_subscribe1.py[line:260] - INFO: node_addr: 104
+2017-12-05 20:02:20,266 - mqtt_subscribe1.py[line:261] - INFO: -------------------
+2017-12-05 20:02:20,266 - mqtt_subscribe1.py[line:272] - INFO: ---------temps----------
+2017-12-05 20:02:20,266 - mqtt_subscribe1.py[line:274] - INFO: temp1: 13.7
+2017-12-05 20:02:20,266 - mqtt_subscribe1.py[line:275] - INFO: temp2: 29.5
+2017-12-05 20:02:20,267 - mqtt_subscribe1.py[line:276] - INFO: temp3: 34.4
+2017-12-05 20:02:20,267 - mqtt_subscribe1.py[line:277] - INFO: temp4: 2621.4
+2017-12-05 20:02:20,267 - mqtt_subscribe1.py[line:278] - INFO: temp5: 2621.4
+2017-12-05 20:02:20,267 - mqtt_subscribe1.py[line:279] - INFO: temp6: 2621.4
+2017-12-05 20:02:20,267 - mqtt_subscribe1.py[line:280] - INFO: -------------------
+2017-12-05 20:02:20,268 - mqtt_subscribe1.py[line:282] - INFO: battery_vol: 3
+2017-12-05 20:03:13,560 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:03:13,601 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:04:13,670 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:04:13,711 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:05:13,776 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:05:13,816 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:06:13,885 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:06:13,926 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:07:13,998 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:07:14,038 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:08:14,107 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:08:14,148 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:09:14,220 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:09:14,260 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:10:14,329 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:10:14,369 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:11:14,437 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:11:14,477 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:12:14,548 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:12:14,588 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:13:14,652 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:13:14,692 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:14:14,760 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:14:14,803 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:15:14,875 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:15:14,916 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:16:14,983 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:16:15,030 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:17:15,098 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:17:15,139 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:18:15,207 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:18:15,250 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:19:15,321 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:19:15,362 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:20:15,427 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:20:15,468 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:21:15,535 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:21:15,577 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:22:15,643 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:22:15,683 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:23:15,753 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:23:15,793 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:24:15,862 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:24:15,902 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:25:15,969 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:25:16,012 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:26:16,081 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:26:16,121 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:27:16,189 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:27:16,264 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:28:16,334 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:28:16,375 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:29:16,444 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:29:16,484 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:30:16,552 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:30:16,611 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:30:56,115 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PUBLISH (d0, q0, r0, m0), '002/upstream', ...  (16 bytes)
+2017-12-05 20:30:56,116 - mqtt_subscribe1.py[line:82] - INFO: 2017-12-05 20:30:56: 002/upstream 0  offffffffffff¦
+2017-12-05 20:30:56,116 - mqtt_subscribe1.py[line:87] - INFO: -------units-----
+2017-12-05 20:30:56,117 - mqtt_subscribe1.py[line:88] - INFO: (32, 111, 3, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 166)
+2017-12-05 20:30:56,118 - mqtt_subscribe1.py[line:93] - INFO: CRC checked!
+2017-12-05 20:30:56,118 - mqtt_subscribe1.py[line:117] - INFO: --------packet_data--------
+2017-12-05 20:30:56,119 - mqtt_subscribe1.py[line:118] - INFO: 0x206f03666666666666666666666666a6
+2017-12-05 20:30:56,119 - mqtt_subscribe1.py[line:119] - INFO: --------packet_data.bin--------
+2017-12-05 20:30:56,120 - mqtt_subscribe1.py[line:120] - INFO: 00100000011011110000001101100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011010100110
+2017-12-05 20:30:56,120 - mqtt_subscribe1.py[line:235] - INFO: -------- 6 channel temp data process beginning -----------
+2017-12-05 20:30:56,122 - mqtt_subscribe1.py[line:259] - INFO: -------------------
+2017-12-05 20:30:56,122 - mqtt_subscribe1.py[line:260] - INFO: node_addr: 111
+2017-12-05 20:30:56,122 - mqtt_subscribe1.py[line:261] - INFO: -------------------
+2017-12-05 20:30:56,123 - mqtt_subscribe1.py[line:272] - INFO: ---------temps----------
+2017-12-05 20:30:56,123 - mqtt_subscribe1.py[line:274] - INFO: temp1: 2621.4
+2017-12-05 20:30:56,123 - mqtt_subscribe1.py[line:275] - INFO: temp2: 2621.4
+2017-12-05 20:30:56,124 - mqtt_subscribe1.py[line:276] - INFO: temp3: 2621.4
+2017-12-05 20:30:56,124 - mqtt_subscribe1.py[line:277] - INFO: temp4: 2621.4
+2017-12-05 20:30:56,124 - mqtt_subscribe1.py[line:278] - INFO: temp5: 2621.4
+2017-12-05 20:30:56,125 - mqtt_subscribe1.py[line:279] - INFO: temp6: 2621.4
+2017-12-05 20:30:56,125 - mqtt_subscribe1.py[line:280] - INFO: -------------------
+2017-12-05 20:30:56,126 - mqtt_subscribe1.py[line:282] - INFO: battery_vol: 3
+2017-12-05 20:31:17,333 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:31:17,374 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:32:17,444 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:32:17,484 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:33:17,556 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:33:17,597 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:34:17,668 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:34:17,708 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:35:17,780 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:35:17,825 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:36:17,895 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:36:17,936 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:37:18,007 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:37:18,047 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:38:18,118 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:38:18,164 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:39:18,235 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:39:18,275 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:40:18,347 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:40:18,388 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:41:18,460 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:41:18,503 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:42:18,572 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:42:18,612 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:43:18,684 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:43:18,727 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:44:18,795 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:44:18,837 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:45:18,910 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:45:18,951 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:46:19,024 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:46:19,064 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:47:19,134 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:47:19,174 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 20:48:05,087 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PUBLISH (d0, q0, r0, m0), '002/upstream', ...  (16 bytes)
+2017-12-05 20:48:05,087 - mqtt_subscribe1.py[line:82] - INFO: 2017-12-05 20:48:05: 002/upstream 0  offffffffffff¦
+2017-12-05 20:48:05,088 - mqtt_subscribe1.py[line:87] - INFO: -------units-----
+2017-12-05 20:48:05,088 - mqtt_subscribe1.py[line:88] - INFO: (32, 111, 3, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 166)
+2017-12-05 20:48:05,123 - mqtt_subscribe1.py[line:93] - INFO: CRC checked!
+2017-12-05 20:48:05,124 - mqtt_subscribe1.py[line:117] - INFO: --------packet_data--------
+2017-12-05 20:48:05,125 - mqtt_subscribe1.py[line:118] - INFO: 0x206f03666666666666666666666666a6
+2017-12-05 20:48:05,125 - mqtt_subscribe1.py[line:119] - INFO: --------packet_data.bin--------
+2017-12-05 20:48:05,126 - mqtt_subscribe1.py[line:120] - INFO: 00100000011011110000001101100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011010100110
+2017-12-05 20:48:05,126 - mqtt_subscribe1.py[line:235] - INFO: -------- 6 channel temp data process beginning -----------
+2017-12-05 20:48:05,128 - mqtt_subscribe1.py[line:259] - INFO: -------------------
+2017-12-05 20:48:05,128 - mqtt_subscribe1.py[line:260] - INFO: node_addr: 111
+2017-12-05 20:48:05,128 - mqtt_subscribe1.py[line:261] - INFO: -------------------
+2017-12-05 20:48:05,128 - mqtt_subscribe1.py[line:272] - INFO: ---------temps----------
+2017-12-05 20:48:05,129 - mqtt_subscribe1.py[line:274] - INFO: temp1: 2621.4
+2017-12-05 20:48:05,129 - mqtt_subscribe1.py[line:275] - INFO: temp2: 2621.4
+2017-12-05 20:48:05,129 - mqtt_subscribe1.py[line:276] - INFO: temp3: 2621.4
+2017-12-05 20:48:05,129 - mqtt_subscribe1.py[line:277] - INFO: temp4: 2621.4
+2017-12-05 20:48:05,130 - mqtt_subscribe1.py[line:278] - INFO: temp5: 2621.4
+2017-12-05 20:48:05,130 - mqtt_subscribe1.py[line:279] - INFO: temp6: 2621.4
+2017-12-05 20:48:05,130 - mqtt_subscribe1.py[line:280] - INFO: -------------------
+2017-12-05 20:48:05,130 - mqtt_subscribe1.py[line:282] - INFO: battery_vol: 3
+2017-12-05 20:48:19,279 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 20:48:19,319 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 21:14:57,920 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 21:16:36,791 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending CONNECT (u1, p1, wr0, wq0, wf0, c1, k60) client_id=yangjian_yixiangcheng3
+2017-12-05 21:16:38,139 - mqtt_subscribe1.py[line:77] - INFO: Log:Received CONNACK (0, 0)
+2017-12-05 21:16:38,140 - mqtt_subscribe1.py[line:68] - INFO: OnConnetc, rc: 0
+2017-12-05 21:17:38,074 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 21:17:38,116 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
+2017-12-05 21:18:38,180 - mqtt_subscribe1.py[line:77] - INFO: Log:Sending PINGREQ
+2017-12-05 21:18:38,221 - mqtt_subscribe1.py[line:77] - INFO: Log:Received PINGRESP
