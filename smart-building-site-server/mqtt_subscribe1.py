@@ -314,7 +314,7 @@ def save_realtime_data_6ch(data):
 
 #=====================================================
 if __name__ == '__main__': 
-    mqttc = mqtt.Client("yangjian_yixiangcheng" + random.choice(['1','2','3','4','5']))
+    mqttc = mqtt.Client("yangjian_yixiangcheng" + random.choice(range(100)))
     mqttc.username_pw_set("iiot", "smartlinkcloud")
     mqttc.on_message = on_message
     mqttc.on_connect = on_connect

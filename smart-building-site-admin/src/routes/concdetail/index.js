@@ -83,6 +83,10 @@ function ConcDetail ({ concdetail, dispatch }) {
                 }}
           >
             <Select {...onSelectProps} defaultValue='108' style={{ width: 120 }} >
+              
+              <OptGroup label="B-5">
+                <Option value="109">109</Option>
+              </OptGroup>
               <OptGroup label="B-9">
                 <Option value="108">108</Option>
               </OptGroup>
