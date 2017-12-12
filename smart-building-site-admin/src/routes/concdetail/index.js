@@ -87,6 +87,9 @@ function ConcDetail ({ concdetail, dispatch }) {
               <OptGroup label="B-5">
                 <Option value="109">109</Option>
               </OptGroup>
+              <OptGroup label="B-7">
+                <Option value="112">109</Option>
+              </OptGroup>
               <OptGroup label="B-9">
                 <Option value="108">108</Option>
               </OptGroup>
