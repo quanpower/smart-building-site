@@ -40,7 +40,7 @@ export default modelExtend(model, {
               gatewayAddr: '1',
               nodeAddr: '112',
               startTime: '2017-10-20 00:00:00',
-              endTime: '2017-12-31 23:59:00',
+              endTime: '2018-12-31 23:59:00',
             },
           })
 
