@@ -93,9 +93,9 @@ function ConcDetail ({ concdetail, dispatch }) {
               <OptGroup label="B-13">
                 <Option value="101">101</Option>
               </OptGroup>
-              <OptGroup label="外墙-A1">
+              <OptGroup label="A7区-B2外墙">
                 <Option value="103">103</Option>
-                <Option value="109">109</Option>
+                <Option value="113">113</Option>
               </OptGroup>
 
             </Select>
