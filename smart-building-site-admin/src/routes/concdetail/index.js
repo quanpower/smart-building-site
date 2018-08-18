@@ -84,19 +84,16 @@ function ConcDetail ({ concdetail, dispatch }) {
           >
             <Select {...onSelectProps} defaultValue='108' style={{ width: 120 }} >
 
-              <OptGroup label="B-7">
+              <OptGroup label="112">
                 <Option value="112">112</Option>
               </OptGroup>
-              <OptGroup label="B-9">
+              <OptGroup label="108">
                 <Option value="108">108</Option>
               </OptGroup>
-              <OptGroup label="B-13">
-                <Option value="101">101</Option>
+              <OptGroup label="111">
+                <Option value="111">111</Option>
               </OptGroup>
-              <OptGroup label="A7区-B2外墙">
-                <Option value="103">103</Option>
-                <Option value="113">113</Option>
-              </OptGroup>
+
 
             </Select>
 
